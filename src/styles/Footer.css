@@ -1,0 +1,23 @@
+#footer{
+    background-color: #f8f9fa;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social ul{
+    display: flex;
+    list-style-type: none;
+    margin: 15px;
+    padding: 0;
+}
+
+#social li{
+    margin-right: 32px;
+}
