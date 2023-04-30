@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
   }
   
   #nav ul {
@@ -14,7 +14,7 @@
   }
   
   #nav li {
-    margin-right: 32px;
+    margin-right: 42px;
   }
   
   #nav a {

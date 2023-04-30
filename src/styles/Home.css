@@ -1,9 +1,9 @@
 #home {
     background-image: url('../../public/background/home-background.jpeg');
-    border: solid 1px red;
-    height: inherit;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
+    width: 100%;
   }
-  
