@@ -1,5 +1,6 @@
 #home {
-    background-image: url('../../public/background/home-background.jpeg');
+    background-image: url('../../public/background/home-background2.jpg');
+    opacity: 1;
     background-size: cover;
     display: flex;
     align-items: center;

@@ -15,9 +15,9 @@ function App() {
     <div className="wrapper">
       <BrowserRouter>
         <NavBar />
-        <Container fluid className="main-content">
-          <Row className="h-100 w-100">
-            <Col className="d-flex flex-column">
+        <Container fluid className="main-content p-0">
+          <Row className="h-100 w-100 m-0 p-0">
+            <Col className="d-flex flex-column m-0 p-0">
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
