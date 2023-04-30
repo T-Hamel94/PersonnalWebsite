@@ -12,12 +12,12 @@ import './styles/App.css';
 function App() {
   return (
 
-    <div className="App Wrapper">
+    <div className="App wrapper">
 
         <BrowserRouter>
-
         <NavBar />
 
+        <div className="main-content">
           <Routes>
               <Route index element={<Home />} />
               <Route path="about" element={<About/>} />
@@ -25,9 +25,9 @@ function App() {
               <Route path="contact" element={<Contact />} />
               <Route path="*" element={<NoPage />} />
           </Routes>
+        </div>
 
           <Footer />
-
         </BrowserRouter>
 
     </div>

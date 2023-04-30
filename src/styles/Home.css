@@ -1,0 +1,9 @@
+#home {
+    background-image: url('../../public/background/home-background.jpeg');
+    border: solid 1px red;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

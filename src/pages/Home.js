@@ -1,5 +1,11 @@
+import '../styles/Home.css'
+
 const Home = () => {
-    return <h1>Home</h1>;
+    return (
+      <div id="home">
+        <h1>Tristan Hamel</h1>
+      </div>
+    );
   };
   
   export default Home;

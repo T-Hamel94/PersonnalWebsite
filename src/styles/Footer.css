@@ -1,8 +1,6 @@
 #footer{
     background-color: #f8f9fa;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    height:90px;
 }
 
 #social{
@@ -20,4 +18,8 @@
 
 #social li{
     margin-right: 32px;
+}
+
+#social img{
+    height: 40px;
 }
