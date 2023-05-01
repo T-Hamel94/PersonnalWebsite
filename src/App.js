@@ -5,10 +5,33 @@ import Home from './pages/Home';
 import NoPage from "./pages/NoPage";
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Blog from './pages/Blog';
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './styles/App.css';
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <SwitchTransition>
+      <CSSTransition
+        key={location.key}
+        classNames="page"
+        timeout={500}
+      >
+        <Routes key={location.key} location={location}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blog />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </CSSTransition>
+    </SwitchTransition>
+  );
+};
 
 function App() {
   return (
@@ -18,13 +41,7 @@ function App() {
         <Container fluid className="main-content p-0">
           <Row className="h-100 w-100 m-0 p-0">
             <Col className="d-flex flex-column m-0 p-0">
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="about" element={<About />} />
-                <Route path="blogs" element={<Blog />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="*" element={<NoPage />} />
-              </Routes>
+              <AnimatedRoutes />
             </Col>
           </Row>
         </Container>
