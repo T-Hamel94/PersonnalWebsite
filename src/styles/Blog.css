@@ -1,0 +1,18 @@
+#blog{
+    background-image: url("../../public/background/home-background.jpeg");
+    opacity: 1;
+    background-size: cover;
+    display: flex;
+
+    flex-grow: 1;
+    width: 100%;
+}
+
+#blog h1{
+    font-family: monospace;
+    font-size:7em;
+}
+
+#blog p{
+    font-size: 2em;
+}

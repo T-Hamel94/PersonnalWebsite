@@ -18,7 +18,7 @@
 
 .page-enter {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-120%);
   background-color: white;
 }
 
@@ -26,7 +26,7 @@
   opacity: 1;
   transform: translateX(0%);
   background-color: white;
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out, background-color 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, transform 350ms ease-in-out, background-color 500ms ease-in-out;
 }
 
 .page-exit {
@@ -36,8 +36,8 @@
 }
 
 .page-exit-active {
-  opacity: 0;
-  transform: translateX(100%);
+  opacity: 1;
+  transform: translateX(120%);
   background-color: white;
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out, background-color 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out, transform 400ms ease-in-out, background-color 500ms ease-in-out;
 }

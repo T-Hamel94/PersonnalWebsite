@@ -7,4 +7,28 @@
     justify-content: center;
     flex-grow: 1;
     width: 100%;
-  }
+}
+
+h1 code{
+    font-size: 1.5em;
+}
+
+.text-monospace{
+    font-family: monospace;
+}
+
+.class {
+    color: #12ba7f;
+}
+
+.method {
+    color: #e6e175;
+}
+
+.string {
+    color: #cc760c;
+}
+
+.punctuation {
+    color:rgb(227, 227, 227);
+}
