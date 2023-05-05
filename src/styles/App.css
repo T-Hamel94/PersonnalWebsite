@@ -6,19 +6,12 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  min-width: 100vh;
-}
-
-.main-content {
-  display: flex;
-  width: 100%;
-  margin:0px;
-  padding: 0px;
+  /* min-width: 100vh; */
 }
 
 .page-enter {
   opacity: 0;
-  transform: translateX(-120%);
+  transform: translateX(100%);
   background-color: white;
 }
 
@@ -37,7 +30,7 @@
 
 .page-exit-active {
   opacity: 1;
-  transform: translateX(120%);
+  transform: translateX(-100%);
   background-color: white;
   transition: opacity 500ms ease-in-out, transform 400ms ease-in-out, background-color 500ms ease-in-out;
 }
