@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './static/NavBar';
+import Header from './static/header/Header'
 import Footer from './static/Footer';
 import Home from './pages/Home';
 import NoPage from "./pages/NoPage";
@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="wrapper">
       <BrowserRouter>
-        <NavBar />
+        <Header></Header>
         <Container fluid className=" p-0">
           <Row className="h-100 w-100 m-0 p-0">
             <Col className="d-flex flex-column m-0 p-0">
