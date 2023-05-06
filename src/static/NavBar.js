@@ -1,8 +1,14 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
 import '../styles/NavBar.css';
+import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    }
+
     return (
         <div class="row" id="navContainer">
 
@@ -27,9 +33,18 @@ function NavBar() {
                 </ul>
             </nav>
 
-            <div class="col-12 col-sm-4" id="language">
-                <p><b>EN</b>/FR</p>
+            <div className="col-12 col-sm-4" id="language">
+                <button
+                    onClick={() => changeLanguage('en')}
+                    className={i18n.language === 'en' ? 'selectedLanguage' : ''}
+                > EN</button>
+                <span>/</span>
+                <button
+                    onClick={() => changeLanguage('fr')}
+                    className={i18n.language === 'fr' ? 'selectedLanguage' : ''}
+                >FR </button>
             </div>
+
 
         </div>
     );
