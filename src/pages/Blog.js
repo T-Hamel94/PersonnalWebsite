@@ -1,4 +1,4 @@
-import '../styles/Blog.css';
+import '../styles/pages/Blog.css';
 import { Container } from 'react-bootstrap';
 
 const Blog = () => {

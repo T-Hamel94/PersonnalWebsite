@@ -1,4 +1,4 @@
-import '../styles/Home.css';
+import '../styles/pages/Home.css';
 import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 

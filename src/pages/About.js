@@ -1,10 +1,15 @@
-import '../styles/pages/About.css'
+import '../styles/pages/About.css';
+import { useTranslation } from 'react-i18next';
+
 
 const About = () => {
+
+  const { t } = useTranslation('about');
+
     return (
       <div id="About" class="row">
         <div class="col-12">
-          <h1 id="mainHeader"> About Me !</h1>
+          <h1 id="mainHeader">{t('about_header')}</h1>
         </div>
 
         <div class="col-4">
