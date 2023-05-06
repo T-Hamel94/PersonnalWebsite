@@ -1,9 +1,10 @@
-import '../styles/NavBar.css';
+import '../styles/static/NavBar.css';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
 function NavBar() {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation('navbar');
+    const { i18n } = useTranslation();
 
     const changeLanguage = (language) => {
         i18n.changeLanguage(language);
@@ -19,16 +20,16 @@ function NavBar() {
             <nav class="col-12 col-sm-4" id="nav">
                 <ul>
                     <li>
-                        <NavLink exact to="/" activeClassName="active">Home</NavLink>
+                        <NavLink exact to="/" activeClassName="active">{t('home')}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/blogs" activeClassName="active">Blog</NavLink>
+                        <NavLink to="/blogs" activeClassName="active">{t('blog')}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" activeClassName="active">About</NavLink>
+                        <NavLink to="/about" activeClassName="active">{t('about')}</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+                        <NavLink to="/contact" activeClassName="active">{t('contact')}</NavLink>
                     </li>
                 </ul>
             </nav>

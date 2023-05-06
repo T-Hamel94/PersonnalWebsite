@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('home');
 
   return (
     <div id="home">
@@ -14,7 +14,7 @@ const Home = () => {
             <span className="punctuation">.</span>
             <span className="method">WriteLine</span>
             <span className="punctuation">(</span>
-            <span className="string">"Hello World!"</span>
+            <span className="string">{t('hello_world')}</span>
             <span className="punctuation">);</span>
           </code>
         </h1>

@@ -17,7 +17,7 @@ i18n
       useSuspense: false,
     },
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
   });
 
