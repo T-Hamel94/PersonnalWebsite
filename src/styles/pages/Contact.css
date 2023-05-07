@@ -17,3 +17,12 @@
     text-align: center;
     text-decoration-line: underline;
 }
+
+#contactContent{
+    margin-top:10px;
+    padding: 25px;
+/* 
+    border: solid black 2px; */
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.53);
+}

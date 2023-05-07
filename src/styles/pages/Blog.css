@@ -1,18 +1,53 @@
-#blog{
-    background-image: url("../../../public/background/home-background.jpeg");
-    opacity: 1;
-    background-size: cover;
-    display: flex;
-
-    flex-grow: 1;
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#blog h1{
+#blogContainer{
+    margin: 0px;
+    padding:0px;
+}
+
+#blogContainer h1{
+
+}
+
+#headerContainer{
+    background-image: url("../../../public/background/home-background.jpeg");
+    background-size: cover;
+    width: 100%;
+    margin-bottom:15px;
+}
+
+#blogContainer h1{
     font-family: monospace;
     font-size:7em;
+    color:rgb(0, 0, 0);
+    text-shadow: 4px 4px 8px black;
+    margin:0px;
+    padding: 0px;
+}
+
+#blogContainer p{
+    margin:0px;
+    padding: 0px;
 }
 
 #blog p{
     font-size: 2em;
+    color: black;
+}
+
+.article{
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 19px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 3px;
+}
+
+.article:hover{
+    background-color: rgb(101, 143, 242);
+    cursor: pointer;
 }
