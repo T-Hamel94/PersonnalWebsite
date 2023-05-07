@@ -12,12 +12,12 @@ function LanguageSwitch() {
         <button
             onClick={() => changeLanguage('en')}
             className={i18n.language === 'en' ? 'selectedLanguage' : ''}
-        > EN</button>
+        > EN </button>
         <span>/</span>
         <button
             onClick={() => changeLanguage('fr')}
             className={i18n.language === 'fr' ? 'selectedLanguage' : ''}
-        >FR </button>
+        > FR </button>
     </div>
   )
 }

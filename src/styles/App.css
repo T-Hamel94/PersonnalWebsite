@@ -3,6 +3,7 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 /* Animation for page switching */
