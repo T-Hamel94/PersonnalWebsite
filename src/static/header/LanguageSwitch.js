@@ -8,15 +8,15 @@ function LanguageSwitch() {
     }
 
   return (
-    <div id="language">
+    <div id="language" class="child d-flex justify-content-center align-items-center">
         <button
             onClick={() => changeLanguage('en')}
-            className={i18n.language === 'en' ? 'selectedLanguage' : ''}
+            className = {i18n.language === 'en' ? 'custom-btn selectedLanguage' : 'custom-btn'}
         > EN </button>
         <span>/</span>
         <button
             onClick={() => changeLanguage('fr')}
-            className={i18n.language === 'fr' ? 'selectedLanguage' : ''}
+            className = {i18n.language === 'fr' ? 'custom-btn selectedLanguage' : 'custom-btn'}
         > FR </button>
     </div>
   )
