@@ -1,8 +1,29 @@
 #contact{
     margin:0px;
     padding: 0px;
+
+    flex-grow: 1;
+
+    background-image: url('../../../public/background/Background_contact.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#contact a:link{
+    text-decoration: none;
 }
 
 #mainHeader{
     text-align: center;
+    text-decoration-line: underline;
+}
+
+#contentHeader{
+    /* border:solid black 1px; */
+
+    margin-top:-13vw;
+    margin-left:20vw;
+    margin-right:20vw;
+    /* justify-content:center; */
+    align-items:flex-start;
 }
