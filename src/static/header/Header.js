@@ -7,15 +7,15 @@ function Header() {
     return (
         <div class="row" id="navContainer">
 
-            <div class="col-12 col-sm-4">
+            <div class="col-md-6 col-sm-12 col-lg-4" id="logoContainer">
                 <MainLogo> </MainLogo>
             </div>
 
-            <nav class="col-12 col-sm-4" id="nav">
+            <nav class="col-md-6 col-sm-12 col-lg-4" id="nav">
                 <NavBar> </NavBar>
             </nav>
 
-            <div className="col-12 col-sm-4" id="language">
+            <div className="col-md-6 col-sm-12 col-lg-4" id="languageContainer">
                 <LanguageSwitch> </LanguageSwitch>
             </div>
 

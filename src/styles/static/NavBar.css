@@ -31,22 +31,17 @@
     color: #007bff;
 }
 
-#nav{
-  /* border: solid black 1px; */
-  text-align: center;
-}
-
 #logo{
   border-radius: 25px;
   width: 170px;
 }
 
-#language{
+#languageContainer{
   text-align: right;
 }
 
 div{
-  /* border: solid black 1px; */
+  border: solid black 1px;
 }
 
 #language button{
@@ -58,3 +53,24 @@ div{
   font-weight: bold;
 }
 
+
+@media screen and (max-width: 768px){
+  #languageContainer{
+    padding:0px;
+    margin-top:12px;
+    /* text-align: center; */
+  }
+
+  #language{
+    justify-content: center;
+  }
+
+  #logoContainer{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #nav{
+    text-align: center;
+  }
+}

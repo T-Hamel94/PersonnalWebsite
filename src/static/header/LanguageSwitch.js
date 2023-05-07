@@ -8,7 +8,7 @@ function LanguageSwitch() {
     }
 
   return (
-    <div>
+    <div id="language">
         <button
             onClick={() => changeLanguage('en')}
             className={i18n.language === 'en' ? 'selectedLanguage' : ''}

@@ -1,3 +1,6 @@
 {
-    "contact_header":"Contactez-moi !"
+    "contact_header":"Contactez-moi !",
+    "content_header1":"Vous pouvez me joindre par email à l'adresse ",
+    "content_header2":" ou sur mon compte ",
+    "content_header3":" et il me fera plaisir de réponse a vos questions ou bien de discuter d'opportunité avec vous "
 }
