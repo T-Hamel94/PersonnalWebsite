@@ -9,12 +9,8 @@
     padding:0px;
 }
 
-#blogContainer h1{
-
-}
-
 #headerContainer{
-    background-image: url("../../../public/background/home-background.jpeg");
+    background-image: url("../../../public/background/art-background6.jpg");
     background-size: cover;
     width: 100%;
     margin-bottom:15px;
@@ -22,11 +18,12 @@
 
 #blogContainer h1{
     font-family: monospace;
-    font-size:7em;
+    text-align: center;
+    font-size: 7em;
+    font-weight: 500;
     color:rgb(0, 0, 0);
-    text-shadow: 4px 4px 8px black;
-    margin:0px;
-    padding: 0px;
+
+    padding: 30px 0px 30px 0px;
 }
 
 #blogContainer p{

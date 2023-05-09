@@ -1,20 +1,19 @@
 import './../styles/pages/Contact.css'
 import { useTranslation } from 'react-i18next';
-import { Container } from 'react-bootstrap';
 
 const Contact = () => {
   const { t } = useTranslation('contact');
 
     return (
         <div id="contact">
-          <div className='container'>
 
-            <div class="row">
-              <div class="col-12 text-center">
-                <h1 id="mainHeader">{t('contact_header')}</h1>
+            <div class="row m-0 p-0">
+              <div class="col-12 text-center m-0 p-0">
+                <h1 id="contactHeader">{t('contact_header')}</h1>
               </div>
             </div>
-            
+
+          <div className='container'>
             <div class="row" id="contactContent">
               <div class="col-12">
                 <h3 id="contentHeader">
@@ -24,8 +23,8 @@ const Contact = () => {
                 </h3>
               </div>
             </div>
-
           </div>
+
         </div>
       );
   };

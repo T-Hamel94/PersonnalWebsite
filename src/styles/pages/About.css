@@ -1,9 +1,16 @@
 #mainHeader{
-    margin:10px;
-    padding:5px;
+        font-family: monospace;
+        text-align: center;
+        font-size: 7em;
+        font-weight: 500;
+        color:rgb(0, 0, 0);
+    
+        background-size: cover;
+        background-position: center;
 
-    font-family: monospace;
-    font-size:3em;
+        background-image: url('../../../public/background/art-background.jpg');
+    
+        padding: 30px 0px 30px 0px;
 }
 
 #About{

@@ -40,12 +40,13 @@
 #languageContainer{
   padding:0px;
   display:flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #language{
   background-color: rgb(211, 207, 207);
   border-radius: 10px;
+  padding: 1px 5px 1px 5px;
 }
 
 #language button{

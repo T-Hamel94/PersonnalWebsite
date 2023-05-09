@@ -3,26 +3,32 @@
     padding: 0px;
 
     flex-grow: 1;
-
-    background-image: url('../../../public/background/Background_contact.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 #contact a:link{
     text-decoration: none;
 }
 
-#mainHeader{
+#contactHeader{
+    font-family: monospace;
     text-align: center;
-    text-decoration-line: underline;
+    font-size: 7em;
+    font-weight: 500;
+    color:rgb(0, 0, 0);
+    
+
+    background-image: url('../../../public/background/art-background11.jpg');
+    background-size: cover;
+    background-position: center;
+
+    padding: 30px 0px 30px 0px;
 }
 
 #contactContent{
     margin-top:10px;
     padding: 25px;
-/* 
-    border: solid black 2px; */
+
+    /* border: solid black 2px; */
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.53);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.53);
 }
