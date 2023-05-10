@@ -14,15 +14,45 @@ const Contact = () => {
             </div>
 
           <div className='container'>
-            <div class="row" id="contactContent">
+
+            <div class="row contactContent">
               <div class="col-12">
-                <h3 id="contentHeader">
-                  {t('content_header1')} <a href="mailto:Tristan_Hamel@hotmail.com">Tristan_Hamel@hotmail.com</a> 
-                  {t('content_header2')} <a href="https://www.linkedin.com/in/tristan-hamel-qcca">Linked In</a>
-                  {t('content_header3')}
-                </h3>
+                <h4>
+                  Email: <a href="mailto:Tristan_Hamel@hotmail.com">Tristan_Hamel@hotmail.com</a> 
+                </h4>
               </div>
             </div>
+
+            <div class="row contactContent">
+              <div class="col-12">
+                <h4>
+                  Linked In: <a href="https://www.linkedin.com/in/tristan-hamel-qcca">Tristan Hamel</a> 
+                </h4>
+              </div>
+            </div>
+
+            <div class="row contactContent">
+              <div class="col-12">
+                <h4>
+                  Location: Québec City, Québec, Canada
+                </h4>
+              </div>
+            </div>
+
+            <div class="row contactContent">
+              <div class="col-12">
+                <h4>
+                  Language: French or english
+                </h4>
+              </div>
+            </div>
+
+            <div class="row contactText">
+              <div class="col-12 ">
+                <p> Do not hesitate to contact me, it will be my pleasure to discuss with you about IT opportunities and more!</p>
+              </div>
+            </div>
+
           </div>
 
         </div>
