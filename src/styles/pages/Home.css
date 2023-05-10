@@ -11,7 +11,7 @@
 
 h1 code{
     text-align: center;
-    font-size: 4.5vw;
+    font-size: 6vw;
 }
 
 .text-monospace{
@@ -34,6 +34,8 @@ h1 code{
     color:rgb(227, 227, 227);
 }
 
-@media screen and (max-width: 768px){
-
+@media screen and (max-width: 414px){
+    h1 code{
+        font-size: 07vw;
+    }
 }

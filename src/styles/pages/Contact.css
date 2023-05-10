@@ -26,12 +26,15 @@
     padding: 25px;
 
     border-bottom: 1px solid black;
-    
 }
 
 .contactText{
     text-align: center;
     padding: 30px
+}
+
+.contactLogo{
+    height: 36px;
 }
 
 
