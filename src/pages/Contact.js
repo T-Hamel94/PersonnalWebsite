@@ -46,7 +46,7 @@ const Contact = () => {
             <div class="row contactContent d-flex justify-content-between">
               <div class="col-6">
                 <h4>
-                  Based in: Québec City, Québec, Canada
+                  <b>{t("contact_location")} </b>{t("contact_location2")}
                 </h4>
               </div>
               <div class="col-6 d-flex justify-content-end">
@@ -57,7 +57,7 @@ const Contact = () => {
             <div class="row contactContent d-flex justify-content-between">
               <div class="col-6">
                 <h4>
-                  Language: Very fluent in french and in english
+                  <b>{t("contact_language")}</b> {t("contact_language2")}
                 </h4>
               </div>
               <div class="col-6 d-flex justify-content-end">

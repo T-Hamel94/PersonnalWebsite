@@ -1,6 +1,8 @@
 {
     "contact_header":"Me joindre",
-    "content_header1":"Vous pouvez me joindre par email à l'adresse ",
-    "content_header2":" ou sur mon compte ",
-    "content_header3":" et il me fera plaisir de réponse a vos questions ou bien de discuter d'opportunité avec vous "
+    "contact_description":"N'hesitez pas à me contacter pour discuter d'une oportunité en TI!",
+    "contact_location": "Basé à:",
+    "contact_location2": "Ville de Québec, Québec, Canada",
+    "contact_language": "Langue: ",
+    "contact_language2": "Très à l'aise autant en français qu'en anglais"
 }
