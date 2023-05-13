@@ -32,6 +32,6 @@
   transition: opacity 500ms ease-in-out, transform 400ms ease-in-out, background-color 500ms ease-in-out;
 }
 
-.justify{
+.justify-text{
   text-align: justify;
 }

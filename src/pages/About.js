@@ -2,9 +2,7 @@ import '../styles/pages/About.css';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
-
   const { t } = useTranslation('about');
-
     return (
       <div>
         <div id="About" class="row ">
@@ -15,35 +13,43 @@ const About = () => {
 
         <div class='container mt-3 mb-2'>
           <div class='row'>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <p class="justify"> I am Tristan Hamel, a passionate of IT, I am particulary intersted in backend developement, DevOps and network infrastructure. I also have a bachelor's degree in industrial relations from University Laval </p>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-              IMG HERE 1
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <p class="justify-text"> {t("about_intro")} </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-              IMG HERE 2
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-              IMG HERE 3
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <img id="headshot" src={process.env.PUBLIC_URL + '/image/headshot.JPG'}></img>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <p class="justify-text"> {t("about_education")} </p>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-              IMG HERE 4
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <img id="headshot" src={process.env.PUBLIC_URL + '/logo/UlavalLogo.png'}></img>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <p class="justify"> Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <p class="justify-text"> {t("about_RQ_job")} </p>
             </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+            <img id="headshot" src={process.env.PUBLIC_URL + '/logo/CegepStFoyLogo.png'}></img>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <p class="justify-text"> {t("about_RQ_prog")} </p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center mb-4">
+              <img id="headshot" src={process.env.PUBLIC_URL + '/image/network.PNG'}></img>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
+              <p class="justify-text"> {t("about_passion")}</p>
+            </div>
+
           </div>
         </div>
       </div>

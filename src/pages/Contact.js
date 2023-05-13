@@ -15,7 +15,7 @@ const Contact = () => {
 
           <div class="row contactText m-0">
             <div class="col-12 ">
-              <p> Do not hesitate to contact me, it will be my pleasure to discuss with you about IT opportunities and more!</p>
+              <p>{t("contact_description")}</p>
             </div>
           </div>
 

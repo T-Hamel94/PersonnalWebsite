@@ -18,3 +18,8 @@
     margin:0px;
     padding:0px;
 }
+
+#headshot{
+    width: 325px;
+    border-radius: 5px;
+}
