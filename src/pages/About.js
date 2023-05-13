@@ -19,7 +19,7 @@ const About = () => {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
-              <img id="headshot" src={process.env.PUBLIC_URL + '/image/headshot.JPG'}></img>
+              <img id="headshot" src={process.env.PUBLIC_URL + '/image/headshot.JPG'} alt="HeadShot"></img>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
@@ -27,7 +27,7 @@ const About = () => {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
-              <img id="headshot" src={process.env.PUBLIC_URL + '/logo/UlavalLogo.png'}></img>
+              <img id="headshot" src={process.env.PUBLIC_URL + '/logo/UlavalLogo.png'} alt="UnivLogo"></img>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
@@ -35,7 +35,7 @@ const About = () => {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
-            <img id="headshot" src={process.env.PUBLIC_URL + '/logo/CegepStFoyLogo.png'}></img>
+            <img id="headshot" src={process.env.PUBLIC_URL + '/logo/CegepStFoyLogo.png'} alt="CegepLogo"></img>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">
@@ -43,7 +43,7 @@ const About = () => {
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center mb-4">
-              <img id="headshot" src={process.env.PUBLIC_URL + '/image/network.PNG'}></img>
+              <img id="headshot" src={process.env.PUBLIC_URL + '/image/network.PNG'} alt="NetworkLogo"></img>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">

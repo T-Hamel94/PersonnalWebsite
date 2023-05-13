@@ -6,6 +6,8 @@ import NoPage from "./pages/NoPage";
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
@@ -26,6 +28,8 @@ const AnimatedRoutes = () => {
           <Route path="blogs" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
+          <Route path="admin" element={<Admin />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </CSSTransition>
