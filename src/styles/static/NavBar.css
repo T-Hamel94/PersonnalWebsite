@@ -43,29 +43,6 @@
   justify-content: flex-end;
 }
 
-#language{
-  background-color: rgb(211, 207, 207);
-  border-radius: 10px;
-  padding: 2px 6px 2px 6px;
-}
-
-#language button{
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(211, 207, 207);
-  opacity: 1;
-}
-
-#language .custom-btn:hover{
-  background-color: #4f98e7;
-  color:white;
-}
-
-.selectedLanguage{
-  font-weight: bold;
-}
-
-
 @media screen and (max-width: 768px){
   #languageContainer{
     margin-top:12px;

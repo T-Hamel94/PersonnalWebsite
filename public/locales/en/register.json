@@ -1,0 +1,10 @@
+{
+    "register_header": "Create an account",
+    "register_firstname": "First name:",
+    "register_lastname": "Last name:",
+    "register_birthdate": "Birthdate:",
+    "register_username": "Username:",
+    "register_email": "Email:",
+    "register_password": "Password:",
+    "register_btn": "Submit"
+}

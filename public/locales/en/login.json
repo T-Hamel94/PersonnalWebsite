@@ -2,5 +2,7 @@
     "login_header": "Welcome",
     "login_email": "Email Address",
     "login_password": "Password",
-    "login_submit": "Submit"
+    "login_submit": "Login",
+    "login_register": "Do not have an account yet?",
+    "login_clickHere": "Click here"
 }

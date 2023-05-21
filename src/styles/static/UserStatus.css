@@ -1,0 +1,26 @@
+#userStatus{
+    margin-right: 10px;
+
+    background-color: rgb(211, 207, 207);
+    border-radius: 10px;
+    padding: 2px 6px 2px 6px;
+}
+
+#userStatus a{
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#userStatus:hover{
+    background-color:#4f98e7;
+}
+
+#userStatus a:hover{
+    color: white;
+}
+
+#userStatus a:active{
+    font-weight: bold;
+}
+
