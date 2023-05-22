@@ -1,9 +1,13 @@
 import '../styles/pages/Login.css';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 function Login() {
-  const [state, setState] = useState({ email: '', password: '' });
+  const [state, setState] = useState({ 
+      email: '',
+      password: ''
+    });
   const { t } = useTranslation('login');
 
   function handleInputChange(event) {
@@ -12,6 +16,16 @@ function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    try{
+      const response = axios.post('https://localhost:7057/api/auth/login', {
+        email: state.email,
+        password: state.password
+      });
+      console.log(response);
+    }
+    catch (error){
+      console.log('There has been an error:' + error)
+    }
   }
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './static/header/Header'
-import Footer from './static/Footer';
+import Footer from './static/footer/Footer';
 import Home from './pages/Home';
 import NoPage from "./pages/NoPage";
 import About from './pages/About';
@@ -9,6 +9,7 @@ import Blog from './pages/Blog';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Register from './pages/Register';
+import Article from './pages/Article';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
@@ -32,6 +33,7 @@ const AnimatedRoutes = () => {
           <Route path="login" element={<Login />} />
           <Route path="admin" element={<Admin />} />
           <Route path="register" element={<Register />} />
+          <Route path="article/:id" element= {<Article />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </CSSTransition>

@@ -1,18 +1,39 @@
 import '../styles/pages/Register.css';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 function Register() {
-    const [state, setState] = useState({ email: '', password: '' });
+    const [state, setState] = useState({ 
+      email: '', 
+      password: '', 
+      firstName: '', 
+      lastName: '', 
+      birthdate: '',
+      username: ''
+    });
     const { t } = useTranslation('register');
 
     function handleInputChange(event) {
         setState({...state, [event.target.name]: event.target.value});
-      }
+    }
     
-      function handleSubmit(event) {
-        event.preventDefault();
+    async function handleSubmit(event) {
+      event.preventDefault();
+      try {
+        const response = await axios.post('https://localhost:7057/api/users/register', {
+          firstName: state.firstName,
+          lastName: state.lastName,
+          username: state.username,
+          password: state.password,
+          email: state.email,
+          birthdate: state.birthdate
+        });
+        console.log(response.data);
+      } catch (error) {
+        console.error('There was an error!', error);
       }
+  }
 
   return (
     <div id='registerBackground'>
@@ -29,26 +50,26 @@ function Register() {
 
           <div className='row'>
             <div className="mb-3 col-lg-6 col-md-12">
-                <label htmlFor="firstname" className="form-label">{t("register_firstname")}</label>
+                <label htmlFor="firstName" className="form-label">{t("register_firstname")}</label>
                 <input
                 type="text"
                 className="form-control"
-                id="firstname"
-                name="firstname"
-                //   value={state.email}
+                id="firstName"
+                name="firstName"
+                value={state.firstName}
                 onChange={handleInputChange}
                 required
                 />
             </div>
 
             <div className="mb-3 col-lg-6 col-md-12">
-                <label htmlFor="lastname" className="form-label">{t("register_lastname")}</label>
+                <label htmlFor="lastName" className="form-label">{t("register_lastname")}</label>
                 <input
                 type="text"
                 className="form-control"
-                id="lastname"
-                name="lastname"
-                //   value={state.email}
+                id="lastName"
+                name="lastName"
+                value={state.lastName}
                 onChange={handleInputChange}
                 required
                 />
@@ -56,26 +77,26 @@ function Register() {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">{t("register_birthdate")}</label>
+            <label htmlFor="birthdate" className="form-label">{t("register_birthdate")}</label>
             <input
               type="date"
               className="form-control"
               id="birthdate"
               name="birthdate"
-            //   value={state.password}
+              value={state.birthdate}
               onChange={handleInputChange}
               required
             />
           </div>
 
           <div className="mb-3">
-            <label htmlFor="firstname" className="form-label">{t("register_username")}</label>
+            <label htmlFor="username" className="form-label">{t("register_username")}</label>
             <input
               type="text"
               className="form-control"
               id="username"
               name="username"
-            //   value={state.email}
+              value={state.username}
               onChange={handleInputChange}
               required
             />

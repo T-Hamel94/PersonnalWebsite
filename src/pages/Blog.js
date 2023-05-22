@@ -1,8 +1,28 @@
 import '../styles/pages/Blog.css';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+import Article from '../components/ArticlePreview';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const { t } = useTranslation('blog');
+
+  const [articles, setArticles] = React.useState(null);
+
+  React.useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get('https://localhost:7057/api/blogposts');
+        setArticles(response.data);
+      }
+      catch (error) {
+        console.log('There was an error:' + error);
+      }
+    };
+  
+    fetchArticles();
+  }, []);
 
   return (
       <div id ="blogContainer">      
@@ -20,24 +40,19 @@ const Blog = () => {
                     </div>
             </div>
 
-
-            <div className = "container" id="articleContainer">
-                <div className='row article'>
-                    <div className='col-12'>
-                        <h2>Article name 1</h2>
-                        <span>Article date</span>
-                        <p>Article First few lines... </p>
-                    </div>
-                </div>
-
-                <div className='row article'>
-                    <div className='col-12'>
-                        <h2>Article name 2</h2>
-                        <span>Article date</span>
-                        <p>Article First few lines... </p>
-                    </div>
-                </div>
+            <div className="container" id="articleContainer">
+              {articles && articles.map(article => (
+                <Link to={`/article/${article.blogPostID}`} key={article.blogPostID} className='articlePreviewLink' >
+                  <Article
+                    title={article.title}
+                    author={article.author}
+                    date={new Date(article.createdDate).toDateString()}
+                    content={article.content}
+                  />
+                </Link>
+              ))}
             </div>
+
       </div>
   );
 };
