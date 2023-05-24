@@ -33,7 +33,7 @@ function Article() {
         <div className='row'>
           <h1 className>{article.title}</h1>
           <div className='col-6' id='articleTitle'>
-            <p><b>Written By: </b> {article.author}</p>
+            <p><b>{t('article_author')} </b> {article.author}</p>
           </div>
           <div className='col-6' id='articleDate'>
             <p>{new Date(article.createdDate).toDateString()}</p>

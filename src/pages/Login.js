@@ -1,9 +1,13 @@
 import '../styles/pages/Login.css';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import jwt from 'jwt-decode';
+import { toast } from 'react-toastify';
 
-function Login() {
+function Login({onLogin}) {
   const [state, setState] = useState({ 
       email: '',
       password: ''
@@ -14,19 +18,34 @@ function Login() {
     setState({...state, [event.target.name]: event.target.value});
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    try{
-      const response = axios.post('https://localhost:7057/api/auth/login', {
+    try {
+      const response = await axios.post('https://localhost:7057/api/auth/login', {
         email: state.email,
         password: state.password
       });
-      console.log(response);
-    }
-    catch (error){
+      if (response.status === 200 && response.data) {
+        console.log('adding to the local storage...');
+        localStorage.setItem('authToken', response.data);
+        const parsedToken = jwt(response.data);
+        console.log(parsedToken);
+        if (parsedToken) {
+          onLogin(parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]);
+          toast.success('Login successful!', {
+            position: 'top-center',
+            autoClose: 3000,
+            hideProgressBar: true
+          });
+        }
+
+        // TODO: Add home redirection here with react-route-dom
+      }
+    } catch (error) {
       console.log('There has been an error:' + error)
     }
   }
+  
 
   return (
     <div id='loginBackground'>

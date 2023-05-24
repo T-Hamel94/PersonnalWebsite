@@ -3,10 +3,13 @@ import MainLogo from './MainLogo';
 import NavBar from './NavBar';
 import LanguageSwitch from './LanguageSwitch';
 import UserStatus from './UserStatus';
+import { ToastContainer } from 'react-toastify';
  
-function Header() {
+function Header({ username, setUsername }) {
     return (
         <div class="row" id="navContainer">
+
+            <ToastContainer position='top-center'></ToastContainer>
 
             <div class="col-md-3 col-sm-12 col-lg-4" id="logoContainer">
                 <MainLogo> </MainLogo>
@@ -17,7 +20,7 @@ function Header() {
             </nav>
             
             <div className="col-md-3 col-sm-12 col-lg-4" id="languageContainer">
-                <UserStatus></UserStatus>
+                <UserStatus username={username} setUsername={setUsername}></UserStatus>
                 <LanguageSwitch> </LanguageSwitch>
             </div>
 

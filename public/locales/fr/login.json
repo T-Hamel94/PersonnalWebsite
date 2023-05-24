@@ -4,5 +4,6 @@
     "login_password": "Mot de passe",
     "login_submit": "Se connecter",
     "login_register": "Vous n'avez pas de compte?",
-    "login_clickHere": "Cliquez ici"
+    "login_clickHere": "Cliquez ici",
+    "login": "Se connecter"
 }

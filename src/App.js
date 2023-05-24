@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './static/header/Header'
 import Footer from './static/footer/Footer';
 import Home from './pages/Home';
@@ -11,11 +11,11 @@ import Admin from './pages/Admin';
 import Register from './pages/Register';
 import Article from './pages/Article';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Toast } from 'react-bootstrap';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './styles/App.css';
 
-const AnimatedRoutes = () => {
+const AnimatedRoutes = ({ onLogin }) => {
   const location = useLocation();
 
   return (
@@ -30,7 +30,7 @@ const AnimatedRoutes = () => {
           <Route path="blogs" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<Login onLogin={onLogin} />} />
           <Route path="admin" element={<Admin />} />
           <Route path="register" element={<Register />} />
           <Route path="article/:id" element= {<Article />} />
@@ -42,18 +42,20 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
+  const [username, setUsername] = useState(null);
+
   return (
     <div className="wrapper">
       <BrowserRouter>
-        <Header></Header>
+        <Header username={username} setUsername={setUsername} />
         <Container fluid className=" p-0">
           <Row className="h-100 w-100 m-0 p-0">
             <Col className="d-flex flex-column m-0 p-0">
-              <AnimatedRoutes />
+              <AnimatedRoutes onLogin={setUsername} />
             </Col>
           </Row>
         </Container>
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     </div>
   );

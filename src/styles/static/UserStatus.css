@@ -1,9 +1,26 @@
+.header-pill{
+    margin:2px 10px 2px 2px;
+
+    background-color: rgb(211, 207, 207);
+    border-radius: 10px;
+    padding: 1px 6px 1px 6px;
+
+    text-align: center;
+}
+
+.header-pill:hover{
+    background-color:#589ce4;
+    cursor: pointer;
+}
+
 #userStatus{
     margin-right: 10px;
 
     background-color: rgb(211, 207, 207);
     border-radius: 10px;
     padding: 2px 6px 2px 6px;
+
+    text-align: center;
 }
 
 #userStatus a{

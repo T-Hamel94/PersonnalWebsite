@@ -4,5 +4,6 @@
     "login_password": "Password",
     "login_submit": "Login",
     "login_register": "Do not have an account yet?",
-    "login_clickHere": "Click here"
+    "login_clickHere": "Click here",
+    "login": "Login"
 }
