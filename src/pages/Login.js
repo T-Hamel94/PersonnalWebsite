@@ -13,6 +13,7 @@ function Login({onLogin}) {
       password: ''
     });
   const { t } = useTranslation('login');
+  const navigate = useNavigate();
 
   function handleInputChange(event) {
     setState({...state, [event.target.name]: event.target.value});
@@ -32,14 +33,14 @@ function Login({onLogin}) {
         console.log(parsedToken);
         if (parsedToken) {
           onLogin(parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]);
-          toast.success('Login successful!', {
+          toast.success(`Login successful as ${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
             position: 'top-center',
-            autoClose: 3000,
-            hideProgressBar: true
+            autoClose: 2500,
+            hideProgressBar: true,
           });
         }
 
-        // TODO: Add home redirection here with react-route-dom
+        navigate('/');
       }
     } catch (error) {
       console.log('There has been an error:' + error)
