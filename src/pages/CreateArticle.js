@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 
-function Admin() {
+function CreateArticle() {
     const [state, setState] = useState({ 
         BlogPostLanguageID: 1,
         Title: '',
@@ -32,22 +32,15 @@ function Admin() {
     <div className='container'>
         <div className='row mt-3'>
             <div className='col-12 text-center'>
-                <h1>Admin Page</h1>
+                <h1>My New Article</h1>
             </div>
         </div>
 
-        <div className='row'>
-            <h2>Adding a blog post</h2>
-        </div>
         <div className='row'>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                         <label htmlFor="Title" className="form-label">Title</label>
                         <input type="text" className="form-control" id="Title" name="Title" onChange={handleInputChange} required />
-                </div>
-                <div className="mb-3">
-                        <label htmlFor="Author" className="form-label">Author</label>
-                        <input type="text" className="form-control" id="Author" name="Author" onChange={handleInputChange} required />
                 </div>
                 <div className="mb-3">
                         <label htmlFor="Content" className="form-label">Content</label>
@@ -66,4 +59,4 @@ function Admin() {
     )
 }
 
-export default Admin;
+export default CreateArticle;

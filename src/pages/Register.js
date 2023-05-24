@@ -1,7 +1,9 @@
 import '../styles/pages/Register.css';
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Register() {
     const [state, setState] = useState({ 
@@ -13,6 +15,7 @@ function Register() {
       username: ''
     });
     const { t } = useTranslation('register');
+    const navigate = useNavigate();
 
     function handleInputChange(event) {
         setState({...state, [event.target.name]: event.target.value});
@@ -30,7 +33,22 @@ function Register() {
           birthdate: state.birthdate
         });
         console.log(response.data);
+
+        if(response.status === 201){
+          toast.success(`Creation of account was sucessful!`, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+          });
+
+          navigate('/login');
+        }
       } catch (error) {
+        toast.error(`Oops! There was an error when trying to register a new user. Please try again later.`, {
+          position: 'top-center',
+          autoClose: 2500,
+          hideProgressBar: true,
+        });
         console.error('There was an error!', error);
       }
   }

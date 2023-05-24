@@ -7,7 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Login from './pages/Login';
-import Admin from './pages/Admin';
+import CreateArticle from './pages/CreateArticle';
 import Register from './pages/Register';
 import Article from './pages/Article';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
@@ -31,7 +31,7 @@ const AnimatedRoutes = ({ onLogin }) => {
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login onLogin={onLogin} />} />
-          <Route path="admin" element={<Admin />} />
+          <Route path="createarticle" element={<CreateArticle />} />
           <Route path="register" element={<Register />} />
           <Route path="article/:id" element= {<Article />} />
           <Route path="*" element={<NoPage />} />
