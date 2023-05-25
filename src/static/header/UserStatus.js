@@ -26,7 +26,7 @@ function UserStatus({ username, setUsername }) {
         username ?
         <div className="d-flex align-items-center">   
           <div className='header-pill'>
-            <span>{username}</span>
+            <NavLink to="/myprofile"> {username} </NavLink>
           </div>
 
           <div className='header-pill'>

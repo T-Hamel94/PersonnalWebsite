@@ -9,7 +9,7 @@ const Contact = () => {
 
           <div class="row m-0 p-0">
             <div class="col-12 text-center m-0 p-0">
-              <h1 id="contactHeader">{t('contact_header')}</h1>
+              <h1 className='page-header' id="contactHeader">{t('contact_header')}</h1>
             </div>
           </div>
 

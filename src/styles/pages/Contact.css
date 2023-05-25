@@ -7,17 +7,7 @@
 }
 
 #contactHeader{
-    font-family: monospace;
-    text-align: center;
-    font-size: 7em;
-    font-weight: 500;
-    color:rgb(0, 0, 0);
-    
     background-image: url('../../../public/background/art-background11.jpg');
-    background-size: cover;
-    background-position: center;
-
-    padding: 30px 0px 30px 0px;
 }
 
 .contactContent{
@@ -49,6 +39,3 @@
         display:none;
     }
 }
-
-
-

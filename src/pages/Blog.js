@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const { t } = useTranslation('blog');
-
   const [articles, setArticles] = React.useState(null);
 
   React.useEffect(() => {
@@ -25,19 +24,18 @@ const Blog = () => {
   }, []);
 
   return (
-      <div id ="blogContainer">      
-            <div id="headerContainer">
-                <div className="row m-0 ">
-                    <div className="col-12 text-center">
-                        <h1 className="">{t("blog_header")}</h1>
-                    </div>
-                </div>
+      <div id ="blogContainer"> 
+
+            <div className="row m-0 ">
+              <div className="col-12 text-center p-0">
+                  <h1 className="page-header">{t("blog_header")}</h1>
+              </div>
             </div>
 
             <div className="row justify-content-center m-0 mb-2">
-                    <div className="col-12 text-center ">
-                        <p>{t("blog_description")}</p>
-                    </div>
+              <div className="col-12 text-center">
+                  <p>{t("blog_description")}</p>
+              </div>
             </div>
 
             <div className="container" id="articleContainer">

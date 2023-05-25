@@ -1,39 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-#blogContainer{
-    margin: 0px;
-    padding:0px;
-}
-
-#headerContainer{
+#blogContainer h1{
     background-image: url("../../../public/background/art-background6.jpg");
     background-size: cover;
-    width: 100%;
-    margin-bottom:15px;
-}
-
-#blogContainer h1{
-    font-family: monospace;
-    text-align: center;
-    font-size: 7em;
-    font-weight: 500;
-    color:rgb(0, 0, 0);
-
-    padding: 30px 0px 30px 0px;
 }
 
 #blogContainer p{
     margin:0px;
     padding: 0px;
-}
-
-#blog p{
-    font-size: 2em;
-    color: black;
 }
 
 .articlePreview{
@@ -52,4 +24,4 @@
 .articlePreviewLink {
     text-decoration: none;
     color: inherit;
-  }
+}

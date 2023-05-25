@@ -13,6 +13,11 @@
     cursor: pointer;
 }
 
+.header-pill a{
+    text-decoration: none;
+    color:inherit;
+}
+
 #userStatus{
     margin-right: 10px;
 

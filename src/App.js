@@ -10,8 +10,9 @@ import Login from './pages/Login';
 import CreateArticle from './pages/CreateArticle';
 import Register from './pages/Register';
 import Article from './pages/Article';
+import Profile from './pages/Profile';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Container, Row, Col, Toast } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './styles/App.css';
 
@@ -33,6 +34,7 @@ const AnimatedRoutes = ({ onLogin }) => {
           <Route path="login" element={<Login onLogin={onLogin} />} />
           <Route path="createarticle" element={<CreateArticle />} />
           <Route path="register" element={<Register />} />
+          <Route path="myprofile" element={<Profile />} />
           <Route path="article/:id" element= {<Article />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
@@ -48,7 +50,7 @@ function App() {
     <div className="wrapper">
       <BrowserRouter>
         <Header username={username} setUsername={setUsername} />
-        <Container fluid className=" p-0">
+        <Container fluid className="p-0">
           <Row className="h-100 w-100 m-0 p-0">
             <Col className="d-flex flex-column m-0 p-0">
               <AnimatedRoutes onLogin={setUsername} />

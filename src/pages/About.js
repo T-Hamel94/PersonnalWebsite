@@ -5,9 +5,10 @@ const About = () => {
   const { t } = useTranslation('about');
     return (
       <div>
+
         <div id="About" class="row ">
           <div class="col-12 m-0 p-0">
-            <h1 id="mainHeader">{t('about_header')}</h1>
+            <h1 className='page-header' id="mainHeader">{t('about_header')}</h1>
           </div>
         </div>
 

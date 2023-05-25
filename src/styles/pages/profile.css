@@ -1,0 +1,27 @@
+#profileHeader{
+    background-image: url('../../../public/background/profile-background.jpg');
+    color:rgb(226, 230, 22);
+    text-shadow: 2px 2px 10px black;
+    font-weight: bold;
+}
+
+#userOptions{
+    border-bottom: solid 1px black;
+}
+
+#postArticle{
+    border-right: solid 1px black;
+}
+
+#deleteAccount{
+    border-left: solid 1px black;
+}
+
+.user-profile-options {
+    transition: transform 0.3s ease-in-out;
+}
+
+.user-profile-options:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
