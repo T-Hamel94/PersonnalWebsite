@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import CreateArticle from './pages/CreateArticle';
 import Register from './pages/Register';
 import Article from './pages/Article';
+import UserArticles from './pages/UserArticles';
 import Profile from './pages/Profile';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -36,6 +37,7 @@ const AnimatedRoutes = ({ onLogin }) => {
           <Route path="register" element={<Register />} />
           <Route path="myprofile" element={<Profile />} />
           <Route path="article/:id" element= {<Article />} />
+          <Route path="myarticle/:username" element= {<UserArticles />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </CSSTransition>

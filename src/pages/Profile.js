@@ -3,10 +3,12 @@ import ConfirmationModal from '../components/ConfirmationModal';
 import { useLogout } from '../utils/Logout';
 import { useTranslation } from 'react-i18next';
 import '../styles/pages/profile.css';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { t } = useTranslation('profile');
+  const navigate = useNavigate();
   const logout = useLogout();
 
   const handleDeleteAccount = () => {
@@ -26,7 +28,7 @@ function Profile() {
       <div className="container">
         <div className="row text-center mt-1 pb-2" id="userOptions">
           <div className="col-4">
-            <h2 className="user-profile-options btn w-75" id="postArticle">{t('profile_post')}</h2>
+            <h2 className="user-profile-options btn w-75" id="postArticle" onClick={() => navigate('/createArticle')}>{t('profile_post')}</h2>
           </div>
           <div className="col-4">
             <h2 className="user-profile-options btn w-75" id="manageArticles">{t('profile_manageArticles')}</h2>
