@@ -1,0 +1,10 @@
+{
+    "profile_header":"My Profile",
+    "profile_post":"Post a new article",
+    "profile_manageArticles": "Manage my articles",
+    "profile_delete": "Delete my account",
+    "profile_tableHeader": "User Info",
+    "profile_username": "Username:",
+    "profile_email": "Email:",
+    "profile_location": "Location:"
+}

@@ -10,11 +10,18 @@
 }
 
 #postArticle{
-    border-right: solid 1px black;
+    background-color:rgba(157, 60, 187, 0.767);
+    font-weight: bold;
+}
+
+#manageArticles{
+    background-color:rgba(32, 216, 216, 0.863);
+    font-weight: bold;
 }
 
 #deleteAccount{
-    border-left: solid 1px black;
+    background-color: rgba(236, 236, 57, 0.836);
+    font-weight: bold;
 }
 
 .user-profile-options {
@@ -24,4 +31,10 @@
 .user-profile-options:hover {
     transform: scale(1.2);
     cursor: pointer;
+}
+
+@media screen and (max-width: 448px){
+    #profileHeader{
+        font-size: 20vw;
+    }
 }
