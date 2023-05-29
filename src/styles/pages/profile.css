@@ -33,8 +33,48 @@
     cursor: pointer;
 }
 
+.table-profile {
+    width: 80%;
+    margin: auto;
+    background-color: #838ff5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-profile th, .table-profile td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .table-profile th {
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .table-profile td {
+    color: #666;
+  }
+  
+  .table-profile tr:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+  
+  .table-profile tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  .table-profile td:first-child {
+    width: 30%;
+  }
+  
+  .table-profile td:nth-child(2) {
+    width: 70%;
+  }
+
 @media screen and (max-width: 448px){
     #profileHeader{
         font-size: 20vw;
     }
 }
+
+

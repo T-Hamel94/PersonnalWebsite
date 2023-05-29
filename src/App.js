@@ -33,7 +33,7 @@ const AnimatedRoutes = ({ onLogin }) => {
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login onLogin={onLogin} />} />
-          <Route path="createarticle" element={<CreateArticle />} />
+          <Route path="createarticle/:username" element={<CreateArticle />} />
           <Route path="register" element={<Register />} />
           <Route path="myprofile" element={<Profile />} />
           <Route path="article/:id" element= {<Article />} />

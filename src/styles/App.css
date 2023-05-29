@@ -27,6 +27,12 @@
   padding: 30px 0px 30px 0px;
 }
 
+@media screen and (max-width: 499px){
+  .page-header{
+      font-size: 5em;
+  }
+}
+
 /* Animation for page switching */
 .page-enter {
   opacity: 0;

@@ -6,5 +6,7 @@
     "profile_tableHeader": "User Info",
     "profile_username": "Username:",
     "profile_email": "Email:",
-    "profile_location": "Location:"
+    "profile_firstname": "First Name: ",
+    "profile_lastname": "Last Name: ",
+    "profile_birthdate": "Birthdate: "
 }

@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function CreateArticle() {
+    const { username } = useParams();
     const [state, setState] = useState({ 
         BlogPostLanguageID: 1,
         Title: '',
-        Author: '',
+        Author: username,
         Content: ''
       });
+
+    useEffect(() => {
+        setState(prevState => ({...prevState, Author: username}));
+    }, [username]);
 
     function handleInputChange(event) {
         setState({...state, [event.target.name]: event.target.value});
