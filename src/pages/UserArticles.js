@@ -1,4 +1,5 @@
 import axios from 'axios';
+import '../styles/pages/UserArticles.css';
 import UserArticlePreview from '../components/UserArticlePreview';
 import ConfirmationModal from '../components/ConfirmationModal';
 import React, { useState } from 'react';
@@ -30,7 +31,7 @@ function UserArticles() {
     if(!isAuth){
       navigate('/');
     }
-    const fetchArticles = async () => {
+    const fetchArticlesByUsername = async () => {
       try {
         const response = await axios.get(`https://localhost:7057/api/blogposts/username/${username}`);
         setArticles(response.data);
@@ -39,7 +40,7 @@ function UserArticles() {
       }
     };
 
-    fetchArticles();
+    fetchArticlesByUsername();
   }, [username]); 
 
   return (
@@ -47,31 +48,36 @@ function UserArticles() {
 
       <div className="row m-0 ">
         <div className="col-12 text-center p-0">
-            <h1 className="page-header">{`${t('usersarticles_articlesby')}${username}`}</h1>
+            <h1 className="page-header" id='userArticlesID'>{`${t('usersarticles_articlesby')}${username}`}</h1>
         </div>
       </div>
 
       <div className="container" id="articleContainer">
-      {articles && articles.map(article => (
-        <div className='row' key={article.blogPostID}>
-          <div className='col-11'>
-            <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
-              <UserArticlePreview
-                title={article.title}
-                author={article.author}
-                date={new Date(article.createdDate).toDateString()}
-                content={article.content}
-              />
-            </Link>
+        {articles && articles.length > 0 ? (
+          articles.map(article => (
+            <div className='row' key={article.blogPostID}>
+              <div className='col-11'>
+                <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
+                  <UserArticlePreview
+                    title={article.title}
+                    author={article.author}
+                    date={new Date(article.createdDate).toDateString()}
+                    content={article.content}
+                  />
+                </Link>
+              </div>
+              <div className='col-1 delete-article' onClick={() => {
+                  setArticleToDelete(article);
+                  setShowConfirmation(true);
+              }}>
+                <p>{t('article_delete')}</p>
+              </div>
+            </div> ))
+        ):(
+          <div className='row'>
+            <h4 className='col-12 text-center mt-4'>{t('usersarticles_notfound')}{username}...</h4>  
           </div>
-          <div className='col-1 delete-article' onClick={() => {
-              setArticleToDelete(article);
-              setShowConfirmation(true);
-          }}>
-              <p>{t('article_delete')}</p>
-          </div>
-        </div>
-      ))}
+        )}
       </div>
 
       <ConfirmationModal

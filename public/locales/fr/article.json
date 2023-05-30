@@ -7,6 +7,7 @@
     "usersarticles_articlesby":"Articles par  ",
     "usersarticles_deleteconfirmation":"Êtes vous sur de vouloir supprimer cet article?",
     "usersarticles_delete":"Supprimer l'article",
+    "usersarticles_notfound":"Aucun article trouvé pour ",
 
     "createarticle_header": "Mon nouvel article",
     "createarticle_title": "Titre",

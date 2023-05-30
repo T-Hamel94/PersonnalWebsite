@@ -61,7 +61,7 @@ function CreateArticle() {
     <div className='container'>
         <div className='row mt-3'>
             <div className='col-12 text-center'>
-                <h1>{t('createarticle_header')}</h1>
+                <h1 className='page-header'>{t('createarticle_header')}</h1>
             </div>
         </div>
 

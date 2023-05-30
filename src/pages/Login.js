@@ -40,9 +40,10 @@ function Login({onLogin}) {
           });
         }
 
-        navigate('/');
+        navigate('/myprofile');
       }
     } catch (error) {
+      toast.error('There was an error when trying to log in, please try again later.', {autoClose: 2500});
       console.log('There has been an error:' + error)
     }
   }
