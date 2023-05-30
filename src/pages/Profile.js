@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { useLogout } from '../utils/Logout';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../utils/useAuth';
 import ConfirmationModal from '../components/ConfirmationModal';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
 function Profile() {
+  const isAuth = useAuth();
   const [user, setUser] = useState({});
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { t } = useTranslation('profile');
@@ -17,7 +19,9 @@ function Profile() {
   const handleDeleteAccount = () => {
     setShowConfirmation(false);
     console.log('deleting account');
+
     // Ajouter Logic de suppression icitttte
+    
     logout();
   };
 
@@ -35,6 +39,9 @@ function Profile() {
   }
 
   useEffect(() => {
+    if(!isAuth){
+      navigate('/');
+    }
     fetchUserData();
   }, []);
 

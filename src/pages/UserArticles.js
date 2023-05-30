@@ -5,8 +5,12 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDeleteArticle } from '../utils/useDeleteArticle';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from '../utils/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 function UserArticles() {
+  const isAuth = useAuth();
+  const navigate = useNavigate();
   const { t } = useTranslation('article');
   const [articles, setArticles] = React.useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -23,6 +27,9 @@ function UserArticles() {
   }
 
   React.useEffect(() => {
+    if(!isAuth){
+      navigate('/');
+    }
     const fetchArticles = async () => {
       try {
         const response = await axios.get(`https://localhost:7057/api/blogposts/username/${username}`);

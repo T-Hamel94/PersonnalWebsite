@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../utils/useAuth';
 
 function CreateArticle() {
+    const isAuth = useAuth();
     const { t } = useTranslation('article');
     const navigate = useNavigate();
     const { username } = useParams();
@@ -17,6 +19,9 @@ function CreateArticle() {
       });
 
     useEffect(() => {
+        if(!isAuth){
+            navigate('/');
+        }
         setState(prevState => ({...prevState, Author: username}));
     }, [username]);
 
