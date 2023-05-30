@@ -2,11 +2,12 @@
     "profile_header":"Mon Profil",
     "profile_post":"Publier un nouvel article",
     "profile_manageArticles": "Gestion de mes articles",
-    "profile_delete": "Supprimer mon compte",
     "profile_tableHeader": "Informations sur l'utilisateur",
     "profile_username": "Nom d'utilisateur:",
     "profile_email": "Addresse Courriel:",
     "profile_firstname": "Prénom: ",
     "profile_lastname": "Nom: ",
-    "profile_birthdate": "Date de naissance: "
+    "profile_birthdate": "Date de naissance: ",
+    "profile_delete": "Supprimer mon compte",
+    "profile_deleteconfirmation": "Êtes vous sur de vouloir supprimer votre compte?"
 }

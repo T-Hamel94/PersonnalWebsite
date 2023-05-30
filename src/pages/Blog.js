@@ -1,9 +1,9 @@
 import '../styles/pages/Blog.css';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-import Article from '../components/ArticlePreview';
+import ArticlePreview from '../components/ArticlePreview';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Blog = () => {
   const { t } = useTranslation('blog');
@@ -41,7 +41,7 @@ const Blog = () => {
             <div className="container" id="articleContainer">
               {articles && articles.map(article => (
                 <Link to={`/article/${article.blogPostID}`} key={article.blogPostID} className='articlePreviewLink' >
-                  <Article
+                  <ArticlePreview
                     title={article.title}
                     author={article.author}
                     date={new Date(article.createdDate).toDateString()}

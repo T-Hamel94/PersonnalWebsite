@@ -8,20 +8,3 @@
     padding: 0px;
 }
 
-.articlePreview{
-    margin-top: 12px;
-    margin-bottom: 10px;
-    padding: 19px;
-    background-color: rgb(231, 231, 231);
-    border-radius: 3px;
-}
-
-.articlePreview:hover{
-    background-color: rgb(101, 143, 242);
-    cursor: pointer;
-}
-
-.articlePreviewLink {
-    text-decoration: none;
-    color: inherit;
-}

@@ -1,3 +1,17 @@
 {
-    "article_author": "Écrit par: "
+    "article_author": "Écrit par: ",
+    "article_delete": "Supprimer",
+    "delete_success": "Article supprimé avec succès",
+    "delete_failed": "Il y a eu un problème lors de la supression de l'article",
+
+    "usersarticles_articlesby":"Articles par  ",
+    "usersarticles_deleteconfirmation":"Êtes vous sur de vouloir supprimer cet article?",
+    "usersarticles_delete":"Supprimer l'article",
+
+    "createarticle_header": "Mon nouvel article",
+    "createarticle_title": "Titre",
+    "createarticle_content": "Contenu",
+    "createarticle_submit": "Soumettre l'article",
+    "createarticle_success": "Article créé avec succès!",
+    "createarticle_failed": "Il y a eu une erreur pendant le création de l'article..."
 }

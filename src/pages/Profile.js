@@ -91,8 +91,8 @@ function Profile() {
           show={showConfirmation}
           onHide={() => setShowConfirmation(false)}
           onConfirm={handleDeleteAccount}
-          message="Are you sure you want to delete your account?"
-          action="Delete"
+          message={t('profile_deleteconfirmation')}
+          action={t('profile_delete')}
         />
 
       </div>

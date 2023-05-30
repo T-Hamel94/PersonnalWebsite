@@ -1,12 +1,26 @@
-import React from 'react';
 import axios from 'axios';
+import UserArticlePreview from '../components/UserArticlePreview';
+import ConfirmationModal from '../components/ConfirmationModal';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Article from '../components/ArticlePreview';
+import { useDeleteArticle } from '../utils/useDeleteArticle';
+import { useTranslation } from 'react-i18next';
 
 function UserArticles() {
+  const { t } = useTranslation('article');
   const [articles, setArticles] = React.useState(null);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [articleToDelete, setArticleToDelete] = useState(null);
+  const deleteArticle = useDeleteArticle();
+  const { username } = useParams();
 
-  const { username } = useParams(); // Accessing username from URL params
+  const handleDeleteArticle = () => {
+    if (articleToDelete) {
+      deleteArticle(articleToDelete.blogPostID);
+      setArticles(articles.filter(article => article.blogPostID !== articleToDelete.blogPostID));
+      setShowConfirmation(false);
+    }
+  }
 
   React.useEffect(() => {
     const fetchArticles = async () => {
@@ -17,37 +31,49 @@ function UserArticles() {
         console.log('There was an error:' + error);
       }
     };
-  
+
     fetchArticles();
-  }, [username]); // Add username as a dependency so that the effect runs again when username changes
+  }, [username]); 
 
   return (
     <div id ="userArticleContainer"> 
 
       <div className="row m-0 ">
         <div className="col-12 text-center p-0">
-            <h1 className="page-header">{`${username}'s Articles`}</h1>
-        </div>
-      </div>
-
-      <div className="row justify-content-center m-0 mb-2">
-        <div className="col-12 text-center">
-            <p>List of articles by {username}.</p>
+            <h1 className="page-header">{`${t('usersarticles_articlesby')}${username}`}</h1>
         </div>
       </div>
 
       <div className="container" id="articleContainer">
-        {articles && articles.map(article => (
-          <Link to={`/article/${article.blogPostID}`} key={article.blogPostID} className='articlePreviewLink' >
-            <Article
-              title={article.title}
-              author={article.author}
-              date={new Date(article.createdDate).toDateString()}
-              content={article.content}
-            />
-          </Link>
-        ))}
+      {articles && articles.map(article => (
+        <div className='row' key={article.blogPostID}>
+          <div className='col-11'>
+            <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
+              <UserArticlePreview
+                title={article.title}
+                author={article.author}
+                date={new Date(article.createdDate).toDateString()}
+                content={article.content}
+              />
+            </Link>
+          </div>
+          <div className='col-1 delete-article' onClick={() => {
+              setArticleToDelete(article);
+              setShowConfirmation(true);
+          }}>
+              <p>{t('article_delete')}</p>
+          </div>
+        </div>
+      ))}
       </div>
+
+      <ConfirmationModal
+          show={showConfirmation}
+          onHide={() => setShowConfirmation(false)}
+          onConfirm={handleDeleteArticle}
+          message={t('usersarticles_deleteconfirmation')}
+          action={t('usersarticles_delete')}
+        />
 
     </div>
   );
