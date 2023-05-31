@@ -8,6 +8,7 @@
     "usersarticles_deleteconfirmation":"Are you sure you want to delete this article?",
     "usersarticles_delete":"Delete article",
     "usersarticles_notfound":"No articles found for ",
+    "usersarticles_newarticle": "Click here to create a new article!",
    
     "createarticle_header": "My new article",
     "createarticle_title": "Title",

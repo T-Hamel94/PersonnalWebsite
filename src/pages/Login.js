@@ -33,7 +33,7 @@ function Login({onLogin}) {
         console.log(parsedToken);
         if (parsedToken) {
           onLogin(parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]);
-          toast.success(`Login successful as ${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
+          toast.success(`${t('login_successful')}${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
             position: 'top-center',
             autoClose: 2500,
             hideProgressBar: true,
@@ -43,7 +43,7 @@ function Login({onLogin}) {
         navigate('/myprofile');
       }
     } catch (error) {
-      toast.error('There was an error when trying to log in, please try again later.', {autoClose: 2500});
+      toast.error(t('login_failed'), {autoClose: 2500}) ;
       console.log('There has been an error:' + error)
     }
   }

@@ -35,7 +35,7 @@ function Register() {
         console.log(response.data);
 
         if(response.status === 201){
-          toast.success(`Creation of account was sucessful!`, {
+          toast.success(`${t('register_success')}`, {
             position: 'top-center',
             autoClose: 2500,
             hideProgressBar: true,
@@ -44,7 +44,7 @@ function Register() {
           navigate('/login');
         }
       } catch (error) {
-        toast.error(`Oops! There was an error when trying to register a new user. Please try again later.`, {
+        toast.error(`${t('register_failed')}`, {
           position: 'top-center',
           autoClose: 2500,
           hideProgressBar: true,

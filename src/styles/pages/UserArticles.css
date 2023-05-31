@@ -1,7 +1,7 @@
-#userArticlesID {
+.funky-header {
     background: linear-gradient(-45deg, #eb88eb, #96e796, #8245d1, #f1e579);
     background-size: 400% 400%;
-    animation: trippyBackground 10s ease infinite;
+    animation: trippyBackground 60s ease infinite;
     color:black;
   }
   

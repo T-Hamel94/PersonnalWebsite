@@ -9,5 +9,7 @@
     "profile_lastname": "Nom: ",
     "profile_birthdate": "Date de naissance: ",
     "profile_delete": "Supprimer mon compte",
-    "profile_deleteconfirmation": "Êtes vous sur de vouloir supprimer votre compte?"
+    "profile_deleteconfirmation": "Êtes vous sur de vouloir supprimer votre compte?",
+    "delete_failed": "Il y a eu une erreur lors de la suppression du compte, veuillez réessayer plus tard",
+    "delete_success": "Compte supprimé avec succès!"
 }

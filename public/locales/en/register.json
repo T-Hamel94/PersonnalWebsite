@@ -6,5 +6,7 @@
     "register_username": "Username:",
     "register_email": "Email:",
     "register_password": "Password:",
-    "register_btn": "Submit"
+    "register_btn": "Submit",
+    "register_success": "Creation of account was sucessful!",
+    "register_failed": "Oops! There was an error when trying to register a new user. Please try again later."
 }

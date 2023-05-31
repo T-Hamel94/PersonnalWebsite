@@ -58,33 +58,36 @@ function CreateArticle() {
     }
 
     return (
-    <div className='container'>
-        <div className='row mt-3'>
-            <div className='col-12 text-center'>
-                <h1 className='page-header'>{t('createarticle_header')}</h1>
+    <>
+        <div className='row m-0'>
+            <div className='col-12 text-center p-0'>
+                <h1 className='page-header funky-header'>{t('createarticle_header')}</h1>
             </div>
         </div>
+        <div className='container'>
 
-        <div className='row'>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                        <label htmlFor="Title" className="form-label">{t('createarticle_title')}</label>
-                        <input type="text" className="form-control" id="Title" name="Title" onChange={handleInputChange} required />
-                </div>
-                <div className="mb-3">
-                        <label htmlFor="Content" className="form-label">{t('createarticle_content')}</label>
-                        <textarea className="form-control" id="Content" name="Content" rows="5" onChange={handleInputChange} required></textarea>
-                </div>
 
-                <div className='row'>
-                    <div className='col-12 text-center'>
-                        <button type="submit" className="btn btn-primary w-25 p-2">{t('createarticle_submit')}</button>
+            <div className='row'>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                            <label htmlFor="Title" className="form-label">{t('createarticle_title')}</label>
+                            <input type="text" className="form-control" id="Title" name="Title" onChange={handleInputChange} required />
                     </div>
-                </div>
-            </form>
-        </div>
+                    <div className="mb-3">
+                            <label htmlFor="Content" className="form-label">{t('createarticle_content')}</label>
+                            <textarea className="form-control" id="Content" name="Content" rows="5" onChange={handleInputChange} required></textarea>
+                    </div>
 
-    </div>
+                    <div className='row'>
+                        <div className='col-12 text-center'>
+                            <button type="submit" className="btn btn-primary w-25 p-2">{t('createarticle_submit')}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </>
     )
 }
 

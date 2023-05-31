@@ -8,6 +8,7 @@
     "usersarticles_deleteconfirmation":"Êtes vous sur de vouloir supprimer cet article?",
     "usersarticles_delete":"Supprimer l'article",
     "usersarticles_notfound":"Aucun article trouvé pour ",
+    "usersarticles_newarticle": "Cliquez ici pour créer un nouvel article!",
 
     "createarticle_header": "Mon nouvel article",
     "createarticle_title": "Titre",

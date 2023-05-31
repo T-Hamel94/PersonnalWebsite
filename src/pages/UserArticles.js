@@ -48,7 +48,7 @@ function UserArticles() {
 
       <div className="row m-0 ">
         <div className="col-12 text-center p-0">
-            <h1 className="page-header" id='userArticlesID'>{`${t('usersarticles_articlesby')}${username}`}</h1>
+            <h1 className='page-header funky-header'>{`${t('usersarticles_articlesby')}${username}`}</h1>
         </div>
       </div>
 
@@ -75,7 +75,8 @@ function UserArticles() {
             </div> ))
         ):(
           <div className='row'>
-            <h4 className='col-12 text-center mt-4'>{t('usersarticles_notfound')}{username}...</h4>  
+            <h4 className='col-12 text-center mt-4'>{t('usersarticles_notfound')}{username} :(</h4>  
+            <Link to={`/createarticle/${username}`} className='text-center'><button className='text-center mt-4 btn btn-info p-2'>{t('usersarticles_newarticle')}</button></Link>
           </div>
         )}
       </div>

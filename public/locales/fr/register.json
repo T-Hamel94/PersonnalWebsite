@@ -6,5 +6,7 @@
     "register_username": "Nom d'utilisateur:",
     "register_email": "Email:",
     "register_password": "Mot de passe:",
-    "register_btn": "Soumettre"
+    "register_btn": "Soumettre",
+    "register_success": "La création du compte a été un succès!",
+    "register_failed": "Oops, il y a eu une erreur dans le création du compte, veuillez réessayer plus tard."
 }

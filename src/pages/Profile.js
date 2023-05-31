@@ -1,12 +1,14 @@
 import '../styles/pages/profile.css';
 import React, { useState, useEffect } from 'react';
 import { useLogout } from '../utils/Logout';
+import { useDeleteUser } from '../utils/useDeleteUser';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/useAuth';
 import ConfirmationModal from '../components/ConfirmationModal';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+
 
 function Profile() {
   const isAuth = useAuth();
@@ -15,14 +17,18 @@ function Profile() {
   const { t } = useTranslation('profile');
   const navigate = useNavigate();
   const logout = useLogout();
+  const deleteUser = useDeleteUser();
 
   const handleDeleteAccount = () => {
     setShowConfirmation(false);
     console.log('deleting account');
-
-    // Ajouter Logic de suppression icitttte
-    
-    logout();
+    try{
+      deleteUser(user.id);
+      setTimeout(logout, 2000);
+    }
+    catch (error){
+      console.log(error);
+    }
   };
 
   async function fetchUserData() {
