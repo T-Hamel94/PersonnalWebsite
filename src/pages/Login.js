@@ -6,14 +6,16 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import jwt from 'jwt-decode';
 import { toast } from 'react-toastify';
+import { useFetchUserData } from '../utils/useFetchUserData';
 
-function Login({onLogin}) {
+function Login() {
   const [state, setState] = useState({ 
       email: '',
       password: ''
     });
   const { t } = useTranslation('login');
   const navigate = useNavigate();
+  const fetchUserData = useFetchUserData();
 
   function handleInputChange(event) {
     setState({...state, [event.target.name]: event.target.value});
@@ -32,8 +34,8 @@ function Login({onLogin}) {
         const parsedToken = jwt(response.data);
         console.log(parsedToken);
         if (parsedToken) {
-          onLogin(parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]);
-          toast.success(`${t('login_successful')}${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
+          fetchUserData();
+          toast.success(`${t('login_successful') } ${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
             position: 'top-center',
             autoClose: 2500,
             hideProgressBar: true,

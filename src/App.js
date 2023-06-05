@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { UserContext } from './contexts/UserContext'; 
 import Header from './static/header/Header'
 import Footer from './static/footer/Footer';
 import Home from './pages/Home';
@@ -17,7 +18,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './styles/App.css';
 
-const AnimatedRoutes = ({ onLogin }) => {
+const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
@@ -32,7 +33,7 @@ const AnimatedRoutes = ({ onLogin }) => {
           <Route path="blogs" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="login" element={<Login onLogin={onLogin} />} />
+          <Route path="login" element={<Login />} />
           <Route path="createarticle/:username" element={<CreateArticle />} />
           <Route path="register" element={<Register />} />
           <Route path="myprofile" element={<Profile />} />
@@ -46,22 +47,24 @@ const AnimatedRoutes = ({ onLogin }) => {
 };
 
 function App() {
-  const [username, setUsername] = useState(null);
+  const [user, setUser] = useState({});
 
   return (
-    <div className="wrapper">
-      <BrowserRouter>
-        <Header username={username} setUsername={setUsername} />
-        <Container fluid className="p-0">
-          <Row className="h-100 w-100 m-0 p-0">
-            <Col className="d-flex flex-column m-0 p-0">
-              <AnimatedRoutes onLogin={setUsername} />
-            </Col>
-          </Row>
-        </Container>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+    <UserContext.Provider value={{user, setUser}}>
+      <div className="wrapper">
+        <BrowserRouter>
+          <Header/>
+          <Container fluid className="p-0">
+            <Row className="h-100 w-100 m-0 p-0">
+              <Col className="d-flex flex-column m-0 p-0">
+                <AnimatedRoutes />
+              </Col>
+            </Row>
+          </Container>
+          <Footer/>
+        </BrowserRouter>
+      </div>
+    </UserContext.Provider>
   );
 }
 

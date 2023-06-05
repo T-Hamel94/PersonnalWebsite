@@ -1,3 +1,7 @@
+import { UserContext } from '../contexts/UserContext';
+import { useContext } from 'react';
+
 export function useAuth() {
-    return !!localStorage.getItem('authToken');
+    const { user } = useContext(UserContext);
+    return user != null || user != undefined;
   }

@@ -1,18 +1,16 @@
 import '../styles/pages/profile.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
 import { useLogout } from '../utils/Logout';
 import { useDeleteUser } from '../utils/useDeleteUser';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/useAuth';
 import ConfirmationModal from '../components/ConfirmationModal';
-import axios from 'axios';
-import jwt_decode from 'jwt-decode';
-
 
 function Profile() {
   const isAuth = useAuth();
-  const [user, setUser] = useState({});
+  const { user, setUser } = useContext(UserContext); 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { t } = useTranslation('profile');
   const navigate = useNavigate();
@@ -31,24 +29,11 @@ function Profile() {
     }
   };
 
-  async function fetchUserData() {
-    const authToken = localStorage.getItem('authToken');
-    if (authToken) {
-      const decodedToken = jwt_decode(authToken);
-      const userId = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
-      
-      const response = await axios.get(`https://localhost:7057/api/Users/userID?userID=${userId}`);
-      if (response.status === 200 && response.data) {
-        setUser(response.data);
-      }
-    }
-  }
-
   useEffect(() => {
     if(!isAuth){
       navigate('/');
     }
-    fetchUserData();
+
   }, []);
 
   return (
@@ -79,23 +64,23 @@ function Profile() {
             </tr>
             <tr>
               <td><b>{t('profile_firstname')}</b></td>
-              <td>{user.firstName}</td>
+              <td>{user && user.firstName}</td>
             </tr>
             <tr>
               <td><b>{t('profile_lastname')}</b></td>
-              <td>{user.lastName}</td>
+              <td>{user && user.lastName}</td>
             </tr>
             <tr>
               <td><b>{t('profile_username')}</b></td>
-              <td>{user.username}</td>
+              <td>{user && user.username}</td>
             </tr>
             <tr>
               <td><b>{t('profile_email')}</b></td>
-              <td>{user.email}</td>
+              <td>{user && user.email}</td>
             </tr>
             <tr>
               <td><b>{t('profile_birthdate')}</b></td>
-              <td>{new Date(user.birthdate).toDateString()}</td>
+              <td>{new Date(user && user.birthdate).toDateString()}</td>
             </tr>
           </tbody>
         </table>

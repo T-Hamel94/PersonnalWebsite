@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/useAuth';
+import { useCreateArticle } from '../utils/useCreateArticle'; 
+import { UserContext } from '../contexts/UserContext'
 
 function CreateArticle() {
+    const { user } = useContext(UserContext);
     const isAuth = useAuth();
+    const createArticle = useCreateArticle();
     const { t } = useTranslation('article');
     const navigate = useNavigate();
     const { username } = useParams();
     const [state, setState] = useState({ 
         BlogPostLanguageID: 1,
         Title: '',
-        Author: username,
+        Author: user ? user.username : '', 
+        AuthorID: user ? user.id : '', 
         Content: ''
       });
 
@@ -31,29 +34,16 @@ function CreateArticle() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        try {
-            const response = await Axios.post('https://localhost:7057/api/blogposts', {
-                BlogPostLanguageID: state.BlogPostLanguageID,
-                Title: state.Title,
-                Author: state.Author,
-                Content: state.Content
-            });
+        const articleCreated = await createArticle({
+            BlogPostLanguageID: state.BlogPostLanguageID,
+            Title: state.Title,
+            Author: state.Author,
+            AuthorID: state.AuthorID,
+            Content: state.Content,
+        });
 
-            if(response.status === 201)
-            {
-                toast.success(t('createarticle_success'), {
-                    autoClose: 4000,
-                    hideProgressBar: true,
-                  });
-                navigate(`/myarticle/${username}`)
-            }
-        }
-        catch (error) {
-            toast.error(t('createarticle_failed'), {
-                autoClose: 4000,
-                hideProgressBar: true,
-              });
-            console.log('error', error);
+        if(articleCreated) {
+            navigate(`/myarticle/${username}`);
         }
     }
 

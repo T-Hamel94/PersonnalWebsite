@@ -5,7 +5,7 @@ import LanguageSwitch from './LanguageSwitch';
 import UserStatus from './UserStatus';
 import { ToastContainer } from 'react-toastify';
  
-function Header({ username, setUsername }) {
+function Header() {
     return (
         <div class="row" id="navContainer">
 
@@ -20,7 +20,7 @@ function Header({ username, setUsername }) {
             </nav>
             
             <div className="col-md-3 col-sm-12 col-lg-4" id="languageContainer">
-                <UserStatus username={username} setUsername={setUsername}></UserStatus>
+                <UserStatus></UserStatus>
                 <LanguageSwitch> </LanguageSwitch>
             </div>
 

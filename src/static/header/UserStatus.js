@@ -1,32 +1,25 @@
 import '../../styles/static/UserStatus.css';
 import LogoutButton from './LogoutButton';
 import { NavLink } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import jwt from 'jwt-decode';
+import { UserContext } from '../../contexts/UserContext'
 
-function UserStatus({ username, setUsername }) {
+function UserStatus() {
   const {t} = useTranslation('login');
+  const { user, setUser} = useContext(UserContext);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    console.log('looking for a token');
-    if (token) {
-      console.log('there is a token');
-      const parsedToken = jwt(token);
-      if (parsedToken) {
-        setUsername(parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]);
-      }
-    }
+    
   }, []);
 
   return (
     <div>
       {
-        username ?
+        user && user.username ?
         <div className="d-flex align-items-center">   
           <div className='header-pill'>
-            <NavLink to="/myprofile"> {username} </NavLink>
+            <NavLink to="/myprofile"> {user.username } </NavLink>
           </div>
 
           <div className='header-pill'>
