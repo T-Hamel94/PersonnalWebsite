@@ -13,6 +13,7 @@
     "createarticle_header": "My new article",
     "createarticle_title": "Title",
     "createarticle_content": "Content",
+    "createarticle_submit": "Soumettre l'article",
     "createarticle_success": "Article successfully created!",
     "createarticle_failed": "There was an error when deleting the article"
 }

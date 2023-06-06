@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { UserContext } from './contexts/UserContext'; 
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import Header from './static/header/Header'
 import Footer from './static/footer/Footer';
 import Home from './pages/Home';
@@ -13,9 +16,6 @@ import Register from './pages/Register';
 import Article from './pages/Article';
 import UserArticles from './pages/UserArticles';
 import Profile from './pages/Profile';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
-import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import './styles/App.css';
 
 const AnimatedRoutes = () => {

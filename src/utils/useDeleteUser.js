@@ -7,8 +7,14 @@ export function useDeleteUser() {
   const { t } = useTranslation('profile');
 
   const deleteUser = useCallback(async (id) => {
+    const token = localStorage.getItem('authToken');
+    
     try {
-      await axios.delete(`https://localhost:7057/api/users/${id}`);
+      await axios.delete(`https://localhost:7057/api/users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       toast.success(t('delete_success'), {
         autoClose: 4000,
         hideProgressBar: true,

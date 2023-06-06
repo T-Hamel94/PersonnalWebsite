@@ -2,22 +2,23 @@ import axios from 'axios';
 import '../styles/pages/UserArticles.css';
 import UserArticlePreview from '../components/UserArticlePreview';
 import ConfirmationModal from '../components/ConfirmationModal';
-import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useContext} from 'react';
+import { Link } from 'react-router-dom';
 import { useDeleteArticle } from '../utils/useDeleteArticle';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../utils/useAuth';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext'
 
 function UserArticles() {
   const isAuth = useAuth();
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const { t } = useTranslation('article');
   const [articles, setArticles] = React.useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [articleToDelete, setArticleToDelete] = useState(null);
   const deleteArticle = useDeleteArticle();
-  const { username } = useParams();
 
   const handleDeleteArticle = () => {
     if (articleToDelete) {
@@ -28,12 +29,12 @@ function UserArticles() {
   }
 
   React.useEffect(() => {
-    if(!isAuth){
+    if(isAuth === false){
       navigate('/');
     }
     const fetchArticlesByUsername = async () => {
       try {
-        const response = await axios.get(`https://localhost:7057/api/blogposts/username/${username}`);
+        const response = await axios.get(`https://localhost:7057/api/blogposts/username/${user?.username ?? 'userNotFound'}`);
         setArticles(response.data);
       } catch (error) {
         console.log('There was an error:' + error);
@@ -41,14 +42,14 @@ function UserArticles() {
     };
 
     fetchArticlesByUsername();
-  }, [username]); 
+  }, [user, isAuth]); 
 
   return (
     <div id ="userArticleContainer"> 
 
       <div className="row m-0 ">
         <div className="col-12 text-center p-0">
-            <h1 className='page-header funky-header'>{`${t('usersarticles_articlesby')}${username}`}</h1>
+            <h1 className='page-header funky-header'>{`${t('usersarticles_articlesby')}${user?.username ?? 'userNotFound'}`}</h1>
         </div>
       </div>
 
@@ -75,8 +76,8 @@ function UserArticles() {
             </div> ))
         ):(
           <div className='row'>
-            <h4 className='col-12 text-center mt-4'>{t('usersarticles_notfound')}{username} :(</h4>  
-            <Link to={`/createarticle/${username}`} className='text-center'><button className='text-center mt-4 btn btn-info p-2'>{t('usersarticles_newarticle')}</button></Link>
+            <h4 className='col-12 text-center mt-4'>{t('usersarticles_notfound')}{user?.username ?? 'userNotFound'} :(</h4>  
+            <Link to={`/createarticle/${user?.username ?? 'userNotFound'}`} className='text-center'><button className='text-center mt-4 btn btn-info p-2'>{t('usersarticles_newarticle')}</button></Link>
           </div>
         )}
       </div>

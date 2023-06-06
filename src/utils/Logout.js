@@ -17,12 +17,6 @@ export function useLogout() {
     toast.success(t('logout_success'), {
       autoClose: 4000,
       hideProgressBar: true,
-      onClose: () => {
-        setTimeout(() => {
-          navigate('/');
-          window.location.reload();
-        }, 2000);
-      }
     });
   }, [navigate, setUser]);  
 

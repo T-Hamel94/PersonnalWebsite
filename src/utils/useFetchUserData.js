@@ -4,11 +4,11 @@ import jwt_decode from 'jwt-decode';
 import { UserContext } from '../contexts/UserContext';
 
 export function useFetchUserData() {
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   const fetchUserData = useCallback(async () => {
     const authToken = localStorage.getItem('authToken');
-    if (authToken) {
+    if ((user?.username == null || user?.username == undefined) && authToken) {
       const decodedToken = jwt_decode(authToken);
       const userId = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
             

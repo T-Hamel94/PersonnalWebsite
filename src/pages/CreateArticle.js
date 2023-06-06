@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/useAuth';
@@ -12,7 +11,6 @@ function CreateArticle() {
     const createArticle = useCreateArticle();
     const { t } = useTranslation('article');
     const navigate = useNavigate();
-    const { username } = useParams();
     const [state, setState] = useState({ 
         BlogPostLanguageID: 1,
         Title: '',
@@ -21,12 +19,13 @@ function CreateArticle() {
         Content: ''
       });
 
-    useEffect(() => {
-        if(!isAuth){
+      useEffect(() => {
+        if (isAuth === false) {
             navigate('/');
         }
-        setState(prevState => ({...prevState, Author: username}));
-    }, [username]);
+        setState(prevState => ({ ...prevState, Author: user ? user.username : '', AuthorID: user ? user.id : '' }));
+    }, [isAuth, user]);
+    
 
     function handleInputChange(event) {
         setState({...state, [event.target.name]: event.target.value});
@@ -42,8 +41,8 @@ function CreateArticle() {
             Content: state.Content,
         });
 
-        if(articleCreated) {
-            navigate(`/myarticle/${username}`);
+        if (articleCreated) {
+            navigate(`/myarticle/${user ? user.username : 'userNotFound'}`);
         }
     }
 

@@ -30,11 +30,12 @@ function Profile() {
   };
 
   useEffect(() => {
-    if(!isAuth){
+    if(isAuth === false){
       navigate('/');
     }
-
-  }, []);
+    console.log(user);
+    
+  }, [user, isAuth]);
 
   return (
     <div>
