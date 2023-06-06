@@ -12,7 +12,7 @@ export function useFetchUserData() {
       const decodedToken = jwt_decode(authToken);
       const userId = decodedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
             
-      const response = await axios.get(`https://localhost:7057/api/Users/userID?userID=${userId}`);
+      const response = await axios.get(`https://localhost:7057/api/Users/userID/${userId}`);
       
       if (response.status === 200 && response.data) {
         setUser(response.data);
