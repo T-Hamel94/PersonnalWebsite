@@ -16,6 +16,7 @@ import Register from './pages/Register';
 import Article from './pages/Article';
 import UserArticles from './pages/UserArticles';
 import Profile from './pages/Profile';
+import ApproveArticles from './pages/ApproveArticles';
 import './styles/App.css';
 
 const AnimatedRoutes = () => {
@@ -39,6 +40,7 @@ const AnimatedRoutes = () => {
           <Route path="myprofile" element={<Profile />} />
           <Route path="article/:id" element= {<Article />} />
           <Route path="myarticle/:username" element= {<UserArticles />} />
+          <Route path="approvearticles" element= {<ApproveArticles />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </CSSTransition>
