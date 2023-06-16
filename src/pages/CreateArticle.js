@@ -33,7 +33,7 @@ function CreateArticle() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const articleCreated = await createArticle({
+        const articleCreated = await createArticle(user, {
             BlogPostLanguageID: state.BlogPostLanguageID,
             Title: state.Title,
             Author: state.Author,

@@ -10,10 +10,11 @@ export function useFetchArticlesToApprove() {
             } 
         });
         if (response.status === 200 && response.data) {
+            console.log(response.data);
             return response.data;
         }
         else{
-
+            console.log('eroor')
         }
     });
 

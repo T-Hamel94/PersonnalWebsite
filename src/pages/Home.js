@@ -8,8 +8,8 @@ const Home = () => {
   return (
     <div id="home">
       <Container>
-        <div class="row">
-          <h1 class="col-12">
+        <div className="row">
+          <h1 className="col-12">
             <code>
               <span className="class">Console</span>
               <span className="punctuation">.</span>
@@ -20,8 +20,8 @@ const Home = () => {
             </code>
           </h1>
         </div>
-        <div class="row">
-          <p class="col-12">
+        <div className="row">
+          <p className="col-12">
             <b>{t('welcome_message')}</b>
           </p>
         </div>

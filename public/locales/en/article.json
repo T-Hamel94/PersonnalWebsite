@@ -15,5 +15,6 @@
     "createarticle_content": "Content",
     "createarticle_submit": "Soumettre l'article",
     "createarticle_success": "Article successfully created!",
+    "createarticle_success_notadmin": "Article successfully created, *** It will be reviewed by and administrator before being published on the website ***",
     "createarticle_failed": "There was an error when deleting the article"
 }

@@ -15,5 +15,6 @@
     "createarticle_content": "Contenu",
     "createarticle_submit": "Soumettre l'article",
     "createarticle_success": "Article créé avec succès!",
+    "createarticle_success_notadmin": "Article créé avec succès! *** Il sera vérifié par un administrateur avant d'être publié sur le site web ***",
     "createarticle_failed": "Il y a eu une erreur pendant le création de l'article..."
 }

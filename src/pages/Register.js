@@ -57,8 +57,8 @@ function Register() {
     <div id='registerBackground'>
     <div id="registerContainer">
 
-      <div class="row">
-        <div class="col-12 text-center mt-3">
+      <div className="row">
+        <div className="col-12 text-center mt-3">
           <h1>{t("register_header")}</h1>
         </div>
       </div>

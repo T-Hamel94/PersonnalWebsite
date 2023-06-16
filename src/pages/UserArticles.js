@@ -59,11 +59,13 @@ function UserArticles() {
             <div className='row' key={article.blogPostID}>
               <div className='col-11'>
                 <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
+                  {console.log(article)}
                   <UserArticlePreview
                     title={article.title}
                     author={article.author}
                     date={new Date(article.createdDate).toDateString()}
                     content={article.content}
+                    isApproved={article.isApproved}
                   />
                 </Link>
               </div>

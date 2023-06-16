@@ -1,5 +1,6 @@
 import '../styles/pages/Blog.css';
-import { React, useState, useEffect } from 'react';
+import '../styles/pages/ApproveArticles.css';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -7,34 +8,31 @@ import { useAuth } from '../utils/useAuth';
 import { useAdminCheck } from '../utils/useAdminCheck';
 import ArticlePreview from '../components/ArticlePreview';
 import { useFetchArticlesToApprove } from '../utils/useFetchArticlesToApprove';
+import { useApproveArticle } from '../utils/useApproveArticle';
 
 const ApproveArticles = () => {
   const { t } = useTranslation('approveArticles');
   const [articles, setArticles] = useState(null);
   const isAuth = useAuth();
   const isAdmin = useAdminCheck();
+  const approveArticle = useApproveArticle()
   const navigate = useNavigate();
-  const fetchUnapprovedArticles = useFetchArticlesToApprove();
+  const fetchUnapprovedArticles = useCallback(useFetchArticlesToApprove());
 
   useEffect(() => {
     if(isAuth === false){
-        navigate('/');
-      }
+      navigate('/');
+    }
     if (isAdmin === false){
       navigate('/myprofile');
     }
-
-    // const fetchUnapprovedArticles = async () => {
-    //   try {
-    //     const response = await axios.get('https://localhost:7057/api/blogposts/unapproved');
-    //     setArticles(response.data);
-    //   }
-    //   catch (error) {
-    //     console.log('There was an error:' + error);
-    //   }
-    // };
   
-    fetchUnapprovedArticles();
+    const fetchAndSetArticles = async () => {
+      const articles = await fetchUnapprovedArticles();
+      setArticles(articles);
+    }
+
+    fetchAndSetArticles();
   }, [isAuth, isAdmin]);
 
   if(isAdmin === null) {
@@ -57,16 +55,32 @@ const ApproveArticles = () => {
             </div>
 
             <div className="container" id="articleContainer">
-              {articles && articles.map(article => (
-                <Link to={`/article/${article.blogPostID}`} key={article.blogPostID} className='articlePreviewLink' >
-                  <ArticlePreview
-                    title={article.title}
-                    author={article.author}
-                    date={new Date(article.createdDate).toDateString()}
-                    content={article.content}
-                  />
-                </Link>
-              ))}
+              {articles && articles.length > 0 ? (
+                articles.map(article => (
+                  <div className='row' key={article.blogPostID}>
+                    <div className='col-11'>
+                      <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
+                        <ArticlePreview
+                          title={article.title}
+                          author={article.author}
+                          date={new Date(article.createdDate).toDateString()}
+                          content={article.content}
+                        />
+                      </Link>
+                    </div>
+                    <div className='col-1 approve-article' onClick={async () => {
+                        if (await approveArticle(article.blogPostID)){
+                          setArticles(prevArticles => prevArticles.filter(a => a.blogPostID !== article.blogPostID));
+                        };
+                    }}>
+                      <p>{'Approve'}</p>
+                    </div>
+                  </div> ))
+              ):(
+                <div className='row'>
+                  <h4 className='col-12 text-center mt-4'>{"Aucun article"} :(</h4>  
+                </div>
+              )}
             </div>
 
       </div>
