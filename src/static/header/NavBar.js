@@ -6,18 +6,18 @@ function NavBar() {
     const { t } = useTranslation('navbar');
 
     return (
-        <ul class="row">
-            <li class="col-lg-1 col-md-1 col-sm-12">
-                <NavLink exact to="/" activeClassName="active">{t('home')}</NavLink>
+        <ul className="row">
+            <li className="col-lg-1 col-md-1 col-sm-12">
+                <NavLink exact to="/" activeclassname="active">{t('home')}</NavLink>
             </li>
-            <li class="col-lg-1 col-md-1 col-sm-12">
-                <NavLink to="/blogs" activeClassName="active">{t('blog')}</NavLink>
+            <li className="col-lg-1 col-md-1 col-sm-12">
+                <NavLink to="/blogs" activeclassname="active">{t('blog')}</NavLink>
             </li>
-            <li class="col-lg-1 col-md-1 col-sm-12">
-                <NavLink to="/about" activeClassName="active">{t('about')}</NavLink>
+            <li className="col-lg-1 col-md-1 col-sm-12">
+                <NavLink to="/about" activeclassname="active">{t('about')}</NavLink>
             </li>
-            <li class="col-lg-1 col-md-1 col-sm-12">
-                <NavLink to="/contact" activeClassName="active">{t('contact')}</NavLink>
+            <li className="col-lg-1 col-md-1 col-sm-12">
+                <NavLink to="/contact" activeclassname="active">{t('contact')}</NavLink>
             </li>
         </ul>
     );

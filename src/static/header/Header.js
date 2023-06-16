@@ -11,11 +11,11 @@ function Header() {
 
             <ToastContainer position='top-center'></ToastContainer>
 
-            <div class="col-md-3 col-sm-12 col-lg-4" id="logoContainer">
+            <div className="col-md-3 col-sm-12 col-lg-4" id="logoContainer">
                 <MainLogo> </MainLogo>
             </div>
 
-            <nav class="col-md-6 col-sm-12 col-lg-4" id="nav">
+            <nav className="col-md-6 col-sm-12 col-lg-4" id="nav">
                 <NavBar> </NavBar>
             </nav>
             
