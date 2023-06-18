@@ -1,5 +1,6 @@
 import '../styles/pages/Article.css'
 import React from 'react';
+import { RotatingLines } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
@@ -23,7 +24,20 @@ function Article() {
   }, [id]);
 
   if (!article) {
-    return <div>Loading...</div>;
+    return (
+      <div className='row'> 
+        <div className='col d-flex justify-content-center align-items-center py-5'>
+          <RotatingLines
+            strokeColor="grey"
+            animationDuration="1.1"
+            strokeWidth="3"
+            height={100}
+            width={100}
+            timeout={3000} 
+          />
+        </div>
+      </div>
+    );
   }
 
   return (

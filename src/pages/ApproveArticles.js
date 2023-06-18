@@ -9,15 +9,26 @@ import { useAdminCheck } from '../utils/useAdminCheck';
 import ArticlePreview from '../components/ArticlePreview';
 import { useFetchArticlesToApprove } from '../utils/useFetchArticlesToApprove';
 import { useApproveArticle } from '../utils/useApproveArticle';
+import ConfirmationModal from '../components/ConfirmationModal';
 
 const ApproveArticles = () => {
-  const { t } = useTranslation('approveArticles');
-  const [articles, setArticles] = useState(null);
+  const { t } = useTranslation('article');
   const isAuth = useAuth();
   const isAdmin = useAdminCheck();
   const approveArticle = useApproveArticle()
   const navigate = useNavigate();
   const fetchUnapprovedArticles = useCallback(useFetchArticlesToApprove());
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [articleToApprove, setArticleToApprove] = useState(null);
+  const [articles, setArticles] = useState(null);
+
+  const handleApproveArticle = () => {
+    if (articleToApprove) {
+      approveArticle(articleToApprove.blogPostID);
+      setArticles(articles.filter(a => a.blogPostID !== articleToApprove.blogPostID));
+      setShowConfirmation(false);
+    }
+  }
 
   useEffect(() => {
     if(isAuth === false){
@@ -44,13 +55,13 @@ const ApproveArticles = () => {
 
             <div className="row m-0 ">
               <div className="col-12 text-center p-0">
-                  <h1 className="page-header">Approve Articles</h1>
+                  <h1 className="page-header">{t('approvearticle_header')}</h1>
               </div>
             </div>
 
             <div className="row justify-content-center m-0 mb-2">
               <div className="col-12 text-center">
-                  <p>Approve here</p>
+                  <p>{t('approvearticle_subheader')}</p>
               </div>
             </div>
 
@@ -69,11 +80,10 @@ const ApproveArticles = () => {
                       </Link>
                     </div>
                     <div className='col-1 approve-article' onClick={async () => {
-                        if (await approveArticle(article.blogPostID)){
-                          setArticles(prevArticles => prevArticles.filter(a => a.blogPostID !== article.blogPostID));
-                        };
+                        setArticleToApprove(article);
+                        setShowConfirmation(true);
                     }}>
-                      <p>{'Approve'}</p>
+                      <p>{t('approvearticle_approve')}</p>
                     </div>
                   </div> ))
               ):(
@@ -82,6 +92,14 @@ const ApproveArticles = () => {
                 </div>
               )}
             </div>
+
+          <ConfirmationModal
+            show={showConfirmation}
+            onHide={() => setShowConfirmation(false)}
+            onConfirm={handleApproveArticle}
+            message={t('approvearticle_confirmation')}
+            action={t('approvearticle_approve')}
+          />
 
       </div>
   );

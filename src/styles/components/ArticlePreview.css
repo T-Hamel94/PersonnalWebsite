@@ -1,3 +1,7 @@
+.row {
+    position: relative;
+}
+
 #articlePreviewDate{
     color:rgb(83, 83, 83);
     margin-top:2px;
@@ -43,27 +47,41 @@
 }
 
 .approval-needed {
-    animation: rainbow 10s infinite, pulse 5s infinite;
-    position:absolute;
-    right: 0;
-    margin-right: 60px;
-    text-shadow: rgba(0, 0, 0, 0.719) 1px 1px 10px;
-  }
-  
-  @keyframes rainbow {
-    0% {color: red;}
-    14% {color: orange;}
-    28% {color: yellow;}
-    42% {color: lime;}
-    57% {color: cyan;}
-    71% {color: blue;}
-    85% {color: purple;}
-    100% {color: red;}
-  }
-  
-  @keyframes pulse {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    padding: 10px;
+
+    color: rgb(255, 203, 34);
+    font-size: 1.1em;
+    text-align: center;
+    text-shadow: 0 0 10px #838181;
+
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 4px;
+
+    animation: pulse 2s ease-in infinite;
+}
+
+@keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.08); }
     100% { transform: scale(1); }
-  }
-  
+}
+
+@media screen and (max-width: 992px){
+    .article-preview{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .delete-article{
+        padding:5px;
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    #deleteMessage{
+        margin:0px
+    }
+}

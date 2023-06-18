@@ -9,7 +9,7 @@ function UserArticlePreview({ title, author, date, content, isApproved }) {
           <p><b>{author}</b></p>
           <p><i>{content.slice(0,100)}... </i></p> 
           <span id='articlePreviewDate'>{date}</span>
-          {!isApproved && <span className='approval-needed'><b>To be approved by an admin</b></span>}
+          {!isApproved && <span className='approval-needed'><b>Approval Pending</b></span>}
         </div> 
       </div>
     )

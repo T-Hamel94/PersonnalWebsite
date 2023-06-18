@@ -16,5 +16,12 @@
     "createarticle_submit": "Soumettre l'article",
     "createarticle_success": "Article créé avec succès!",
     "createarticle_success_notadmin": "Article créé avec succès! *** Il sera vérifié par un administrateur avant d'être publié sur le site web ***",
-    "createarticle_failed": "Il y a eu une erreur pendant le création de l'article..."
+    "createarticle_failed": "Il y a eu une erreur pendant le création de l'article...",
+
+    "approvearticle_header": "Approuver",
+    "approvearticle_subheader": "Articles en attente d'être approuvé par un utilisateur admin: ",
+    "approvearticle_approve" : "Approuver",
+    "approvearticle_success" : "Article approuvé avec succès",
+    "approvearticle_failure": "Il y a eu une erreur lors de l'approbation de l'article",
+    "approvearticle_confirmation": "Êtes vous sur de vouloir approuver cet article?"
 }

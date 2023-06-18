@@ -57,7 +57,7 @@ function UserArticles() {
         {articles && articles.length > 0 ? (
           articles.map(article => (
             <div className='row' key={article.blogPostID}>
-              <div className='col-11'>
+              <div className='col-lg-11 col-sm-12'>
                 <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
                   {console.log(article)}
                   <UserArticlePreview
@@ -69,11 +69,11 @@ function UserArticles() {
                   />
                 </Link>
               </div>
-              <div className='col-1 delete-article' onClick={() => {
+              <div className='col-lg-1 col-sm-12 delete-article' onClick={() => {
                   setArticleToDelete(article);
                   setShowConfirmation(true);
               }}>
-                <p>{t('article_delete')}</p>
+                <p id="deleteMessage">{t('article_delete')}</p>
               </div>
             </div> ))
         ):(
