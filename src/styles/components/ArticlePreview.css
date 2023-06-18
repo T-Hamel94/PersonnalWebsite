@@ -72,7 +72,7 @@
 @media screen and (max-width: 992px){
     .article-preview{
         margin-top: 0px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
     }
 
     .delete-article{

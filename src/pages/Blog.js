@@ -4,6 +4,7 @@ import axios from 'axios';
 import ArticlePreview from '../components/ArticlePreview';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { RotatingLines } from 'react-loader-spinner';
 
 const Blog = () => {
   const { t } = useTranslation('blog');
@@ -22,6 +23,25 @@ const Blog = () => {
   
     fetchArticles();
   }, []);
+
+  if (!articles) {
+    return (
+      <>
+      <div className='row'> 
+        <div className='col d-flex justify-content-center align-items-center py-5'>
+          <RotatingLines
+            strokeColor="grey"
+            animationDuration="1.1"
+            strokeWidth="3"
+            height={100}
+            width={100}
+            timeout={3000} 
+          />
+        </div>
+      </div>
+      </>
+    );
+  }
 
   return (
       <div id ="blogContainer"> 

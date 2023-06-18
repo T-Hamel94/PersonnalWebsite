@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/useAuth';
 import ConfirmationModal from '../components/ConfirmationModal';
+import { RotatingLines } from 'react-loader-spinner';
 
 function Profile() {
   const isAuth = useAuth();
@@ -33,9 +34,26 @@ function Profile() {
     if(isAuth === false){
       navigate('/');
     }
-    console.log(user);
-    
   }, [user, isAuth]);
+
+  if (!user || !user.username){
+    return (
+      <>
+      <div className='row'> 
+        <div className='col d-flex justify-content-center align-items-center py-5'>
+          <RotatingLines
+            strokeColor="grey"
+            animationDuration="1.1"
+            strokeWidth="3"
+            height={100}
+            width={100}
+            timeout={3000} 
+          />
+        </div>
+      </div>
+      </>
+    );
+  }
 
   return (
     <div>

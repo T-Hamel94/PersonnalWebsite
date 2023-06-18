@@ -69,7 +69,7 @@ const ApproveArticles = () => {
               {articles && articles.length > 0 ? (
                 articles.map(article => (
                   <div className='row' key={article.blogPostID}>
-                    <div className='col-11'>
+                    <div className='col-lg-11 col-sm-12'>
                       <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
                         <ArticlePreview
                           title={article.title}
@@ -79,7 +79,7 @@ const ApproveArticles = () => {
                         />
                       </Link>
                     </div>
-                    <div className='col-1 approve-article' onClick={async () => {
+                    <div className='col-lg-1 col-sm-12 approve-article' onClick={async () => {
                         setArticleToApprove(article);
                         setShowConfirmation(true);
                     }}>

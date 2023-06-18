@@ -11,13 +11,13 @@ function NavBar() {
                 <NavLink exact to="/" activeclassname="active">{t('home')}</NavLink>
             </li>
             <li className="col-lg-1 col-md-1 col-sm-12">
-                <NavLink to="/blogs" activeclassname="active">{t('blog')}</NavLink>
-            </li>
-            <li className="col-lg-1 col-md-1 col-sm-12">
                 <NavLink to="/about" activeclassname="active">{t('about')}</NavLink>
             </li>
             <li className="col-lg-1 col-md-1 col-sm-12">
                 <NavLink to="/contact" activeclassname="active">{t('contact')}</NavLink>
+            </li>
+            <li className="col-lg-1 col-md-1 col-sm-12">
+                <NavLink to="/blog" activeclassname="active">{t('blog')}</NavLink>
             </li>
         </ul>
     );

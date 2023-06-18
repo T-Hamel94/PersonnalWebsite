@@ -31,7 +31,7 @@ const AnimatedRoutes = () => {
       >
         <Routes key={location.key} location={location}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blog />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login />} />
