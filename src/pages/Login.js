@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useFetchUserData } from '../utils/useFetchUserData';
 
 function Login() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [state, setState] = useState({ 
       email: '',
       password: ''
@@ -24,7 +25,7 @@ function Login() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const response = await axios.post('https://localhost:7057/api/auth/login', {
+      const response = await axios.post(`${apiUrl}/auth/login`, {
         email: state.email,
         password: state.password
       });

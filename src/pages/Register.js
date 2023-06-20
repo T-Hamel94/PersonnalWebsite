@@ -15,6 +15,7 @@ function Register() {
       username: ''
     });
     const { t } = useTranslation('register');
+    const apiUrl = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
 
     function handleInputChange(event) {
@@ -24,7 +25,7 @@ function Register() {
     async function handleSubmit(event) {
       event.preventDefault();
       try {
-        const response = await axios.post('https://localhost:7057/api/users/register', {
+        const response = await axios.post(`${apiUrl}/users/register`, {
           firstName: state.firstName,
           lastName: state.lastName,
           username: state.username,

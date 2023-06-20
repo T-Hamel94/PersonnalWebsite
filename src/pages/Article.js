@@ -9,11 +9,12 @@ function Article() {
   const { id } = useParams();
   const [article, setArticle] = React.useState(null);
   const { t } = useTranslation('article');
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   React.useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await axios.get(`https://localhost:7057/api/blogposts/id/${id}`);
+        const response = await axios.get(`${apiUrl}/blogposts/id/${id}`);
         setArticle(response.data);
       } catch (error) {
         console.log('There was an error:' + error);

@@ -8,9 +8,10 @@ export function useDeleteUser() {
 
   const deleteUser = useCallback(async (id) => {
     const token = localStorage.getItem('authToken');
+    const apiUrl = process.env.REACT_APP_API_URL;
     
     try {
-      await axios.delete(`https://localhost:7057/api/users/${id}`, {
+      await axios.delete(`${apiUrl}/users/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -9,11 +9,12 @@ import { RotatingLines } from 'react-loader-spinner';
 const Blog = () => {
   const { t } = useTranslation('blog');
   const [articles, setArticles] = React.useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   React.useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('https://localhost:7057/api/blogposts');
+        const response = await axios.get(`${apiUrl}/blogposts`);
         setArticles(response.data);
       }
       catch (error) {

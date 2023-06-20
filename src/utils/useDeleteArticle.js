@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next';
 
 export function useDeleteArticle() {
   const { t } = useTranslation('article');
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const deleteArticle = useCallback(async (id) => {
     const token = localStorage.getItem('authToken');
     
     try {
-      await axios.delete(`https://localhost:7057/api/blogposts/${id}`, {
+      await axios.delete(`${apiUrl}/blogposts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

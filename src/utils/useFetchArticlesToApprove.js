@@ -3,8 +3,10 @@ import { useCallback } from 'react';
 
 export function useFetchArticlesToApprove() {
     const token = localStorage.getItem('authToken');
+    const apiUrl = process.env.REACT_APP_API_URL;
+    
     const fetchArticlesToApprove = useCallback(async () => {       
-        const response = await axios.get(`https://localhost:7057/api/blogposts/unapproved`, {
+        const response = await axios.get(`${apiUrl}/blogposts/unapproved`, {
             headers: {
                 Authorization: `Bearer ${token}`
             } 

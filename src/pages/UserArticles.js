@@ -15,6 +15,7 @@ function UserArticles() {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
   const { t } = useTranslation('article');
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [articles, setArticles] = React.useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [articleToDelete, setArticleToDelete] = useState(null);
@@ -34,7 +35,7 @@ function UserArticles() {
     }
     const fetchArticlesByUsername = async () => {
       try {
-        const response = await axios.get(`https://localhost:7057/api/blogposts/username/${user?.username ?? 'userNotFound'}`);
+        const response = await axios.get(`${apiUrl}/blogposts/username/${user?.username ?? 'userNotFound'}`);
         setArticles(response.data);
       } catch (error) {
         console.log('There was an error:' + error);
