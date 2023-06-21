@@ -8,5 +8,6 @@
     "register_password": "Password:",
     "register_btn": "Submit",
     "register_success": "Creation of account was sucessful!",
-    "register_failed": "Oops! There was an error when trying to register a new user. Please try again later."
+    "register_failed": "Oops! There was an error when trying to register a new user. Please try again later.",
+    "register_userexists": "The username or email is already used on this website"
 }

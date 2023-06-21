@@ -44,13 +44,28 @@ function Register() {
 
           navigate('/login');
         }
+        else if (response.status === 409){
+          toast.error(`${t('register_userexists')}`, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+          });
+        }
       } catch (error) {
-        toast.error(`${t('register_failed')}`, {
-          position: 'top-center',
-          autoClose: 2500,
-          hideProgressBar: true,
-        });
-        console.error('There was an error!', error);
+        if (error.response.status === 409){
+          toast.error(`${t('register_userexists')}`, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+          });
+        }
+        else{
+          toast.error(`${t('register_failed')}`, {
+            position: 'top-center',
+            autoClose: 2500,
+            hideProgressBar: true,
+          });
+        }
       }
   }
 
