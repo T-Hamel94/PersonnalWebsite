@@ -20,13 +20,12 @@ function Profile() {
 
   const handleDeleteAccount = () => {
     setShowConfirmation(false);
-    console.log('deleting account');
     try{
       deleteUser(user.id);
       setTimeout(logout, 2000);
     }
     catch (error){
-      console.log(error);
+      console.log("There has been an error when deleting the user: " + error);
     }
   };
 

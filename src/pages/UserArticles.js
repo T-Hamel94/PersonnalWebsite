@@ -60,7 +60,6 @@ function UserArticles() {
             <div className='row' key={article.blogPostID}>
               <div className='col-lg-11 col-sm-12'>
                 <Link to={`/article/${article.blogPostID}`} className='articlePreviewLink' >
-                  {console.log(article)}
                   <UserArticlePreview
                     title={article.title}
                     author={article.author}

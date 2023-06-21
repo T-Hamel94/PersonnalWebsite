@@ -30,10 +30,8 @@ function Login() {
         password: state.password
       });
       if (response.status === 200 && response.data) {
-        console.log('adding to the local storage...');
         localStorage.setItem('authToken', response.data);
         const parsedToken = jwt(response.data);
-        console.log(parsedToken);
         if (parsedToken) {
           fetchUserData();
           toast.success(`${t('login_successful') } ${parsedToken["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"]}!`, {
