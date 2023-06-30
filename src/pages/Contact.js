@@ -35,11 +35,22 @@ const Contact = () => {
             <div className="row contactContent d-flex justify-content-between">
               <div class="col-6 ">
                 <h4>
-                  <a href="https://www.linkedin.com/in/tristan-hamel-qcca">Linked In</a> 
+                  <a href="https://www.linkedin.com/in/tristan-hamel-qcca" target='_new'>Linked In</a> 
                 </h4>
               </div>
               <div className="col-6 d-flex justify-content-end">
                 <img src={process.env.PUBLIC_URL + "/logo/LI-In-Bug.png"} className="contactLogo"></img>
+              </div>
+            </div>
+
+            <div className="row contactContent d-flex justify-content-between">
+              <div class="col-6 ">
+                <h4>
+                  <a href="https://www.chess.com/member/t_hamel" target='_new'>Challenge me !</a> 
+                </h4>
+              </div>
+              <div className="col-6 d-flex justify-content-end">
+                <img src={process.env.PUBLIC_URL + "/logo/chessdotcom.png"} className="contactLogo"></img>
               </div>
             </div>
 
@@ -64,7 +75,6 @@ const Contact = () => {
                 <img src={process.env.PUBLIC_URL + "/logo/languageLogo.png"} className="contactLogo"></img>
               </div>
             </div>
-
 
           </div>
 

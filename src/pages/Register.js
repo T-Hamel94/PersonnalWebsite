@@ -156,7 +156,7 @@ function Register() {
 
           <div className='row'>
             <div className="col-12 text-center">
-              <button type="submit" className="btn btn-primary w-25 p-2">{t("register_btn")}</button>
+              <button type="submit" className="btn btn-primary">{t("register_btn")}</button>
             </div>
           </div>
         </form>

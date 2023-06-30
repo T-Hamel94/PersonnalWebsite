@@ -35,13 +35,13 @@ const Blog = () => {
 
       <div className="row justify-content-center m-0 mb-2">
         <div className="col-12 text-center">
-          <p>{t("blog_description")}</p>
+          {/* <p>{t("blog_description")}</p> */}
         </div>
       </div>
 
       {articles === null ? 
         (
-          <div className='row'> 
+          <div className='row m-0'> 
             <div className='col d-flex justify-content-center align-items-center py-5'>
               <RotatingLines
                 strokeColor="grey"

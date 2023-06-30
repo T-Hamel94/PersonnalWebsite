@@ -89,8 +89,8 @@ function Login() {
             </div>
 
             <div className='row'>
-              <div className="col-12 text-center">
-                <button type="submit" className="btn btn-primary w-25 p-2">{t("login_submit")}</button>
+              <div className="col-12 text-center ">
+                <button type="submit" className="btn btn-primary">{t("login_submit")}</button>
               </div>
             </div>
           </form>
