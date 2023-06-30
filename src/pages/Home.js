@@ -22,7 +22,7 @@ const Home = () => {
         </div>
         <div className="row">
           <p className="col-12">
-            <b>{t('welcome_message')}</b>
+            <b className='text-white'>{t('welcome_message')}</b>
           </p>
         </div>
       </Container>
