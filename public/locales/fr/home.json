@@ -1,4 +1,4 @@
 {
     "hello_world": "Hello World!",
-    "welcome_message": "Bienvenue sur mon site personnel ! Je m'appelle Tristan et je suis passionné par la technologie depuis aussi longtemps que je me souvienne. Sur ce site, vous trouverez des informations me concernant, des articles de blog et mes coordonnées. N'hésitez pas à explorer et soyez attentif car il y a peut-être plus qu'il n'y paraît sur ce site ;)"
+    "welcome_message": "Bienvenue sur mon site personnel ! J'ai construit l'ensemble de ce site moi-même en utilisant React, .NET et SQL Server. Je l'héberge également sur mon serveur maison dans un environnement Docker sur Ubuntu Server. Consultez la section blogue pour plus de détails!"
 }

@@ -44,7 +44,7 @@ const About = () => {
             </div>
 
             <div className="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center mb-4">
-              <img id="headshot" src={process.env.PUBLIC_URL + '/image/network.PNG'} alt="NetworkLogo"></img>
+              <img id="headshot" src={process.env.PUBLIC_URL + '/image/network.png'} alt="NetworkLogo"></img>
             </div>
 
             <div className="col-lg-4 col-md-6 col-sm-12 justify-content-center d-flex align-items-center">

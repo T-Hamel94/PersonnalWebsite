@@ -15,7 +15,7 @@ export function useFetchArticlesToApprove() {
             return response.data;
         }
         else{
-            console.log('There has been an error while fetchinf the article to approve')
+            console.log('There has been an error while fetching the article to approve')
         }
     });
 

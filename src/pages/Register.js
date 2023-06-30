@@ -33,7 +33,6 @@ function Register() {
           email: state.email,
           birthdate: state.birthdate
         });
-        console.log(response.data);
 
         if(response.status === 201){
           toast.success(`${t('register_success')}`, {
@@ -43,13 +42,6 @@ function Register() {
           });
 
           navigate('/login');
-        }
-        else if (response.status === 409){
-          toast.error(`${t('register_userexists')}`, {
-            position: 'top-center',
-            autoClose: 2500,
-            hideProgressBar: true,
-          });
         }
       } catch (error) {
         if (error.response.status === 409){
