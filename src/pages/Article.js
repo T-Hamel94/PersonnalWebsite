@@ -1,5 +1,6 @@
 import '../styles/pages/Article.css'
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { RotatingLines } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -55,7 +56,9 @@ function Article() {
           </div>
         </div>
         <div className='row'>
-          <p className='mt-3 text-center' id='articleContent'>{article.content}</p>
+          <div className='mt-3 mb-3 text-center justify-text' id='articleContent'>
+            <ReactMarkdown children={article.content} className='justify-text' />
+          </div>
         </div>
       </div>
 
