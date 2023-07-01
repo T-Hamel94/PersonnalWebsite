@@ -1,0 +1,41 @@
+#home {
+    background-image: url('../../../public/background/home-background2.jpg');
+    opacity: 1;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+h1 code{
+    text-align: center;
+    font-size: 6vw;
+}
+
+.text-monospace{
+    font-family: monospace;
+}
+
+.class {
+    color: #12ba7f;
+}
+
+.method {
+    color: #e6e175;
+}
+
+.string {
+    color: #cc760c;
+}
+
+.punctuation {
+    color:rgb(227, 227, 227);
+}
+
+@media screen and (max-width: 414px){
+    h1 code{
+        font-size: 07vw;
+    }
+}

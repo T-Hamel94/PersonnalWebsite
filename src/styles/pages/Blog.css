@@ -1,0 +1,10 @@
+#blogContainer h1{
+    background-image: url("../../../public/background/art-background6.jpg");
+    background-size: cover;
+}
+
+#blogContainer p{
+    margin:0px;
+    padding: 0px;
+}
+

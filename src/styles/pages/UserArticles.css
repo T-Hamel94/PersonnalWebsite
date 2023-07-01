@@ -1,0 +1,18 @@
+.funky-header {
+    background: linear-gradient(-45deg, #eb88eb, #96e796, #8245d1, #f1e579);
+    background-size: 400% 400%;
+    animation: trippyBackground 60s ease infinite;
+    color:black;
+  }
+  
+  @keyframes trippyBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

@@ -1,0 +1,27 @@
+{
+    "article_author": "Écrit par: ",
+    "article_delete": "Supprimer",
+    "delete_success": "Article supprimé avec succès",
+    "delete_failed": "Il y a eu un problème lors de la supression de l'article",
+
+    "usersarticles_articlesby":"Articles par  ",
+    "usersarticles_deleteconfirmation":"Êtes vous sur de vouloir supprimer cet article?",
+    "usersarticles_delete":"Supprimer l'article",
+    "usersarticles_notfound":"Aucun article trouvé pour ",
+    "usersarticles_newarticle": "Cliquez ici pour créer un nouvel article!",
+
+    "createarticle_header": "Mon nouvel article",
+    "createarticle_title": "Titre",
+    "createarticle_content": "Contenu",
+    "createarticle_submit": "Soumettre l'article",
+    "createarticle_success": "Article créé avec succès!",
+    "createarticle_success_notadmin": "Article créé avec succès! *** Il sera vérifié par un administrateur avant d'être publié sur le site web ***",
+    "createarticle_failed": "Il y a eu une erreur pendant le création de l'article...",
+
+    "approvearticle_header": "Approuver",
+    "approvearticle_subheader": "Articles en attente d'être approuvé par un utilisateur admin: ",
+    "approvearticle_approve" : "Approuver",
+    "approvearticle_success" : "Article approuvé avec succès",
+    "approvearticle_failure": "Il y a eu une erreur lors de l'approbation de l'article",
+    "approvearticle_confirmation": "Êtes vous sur de vouloir approuver cet article?"
+}

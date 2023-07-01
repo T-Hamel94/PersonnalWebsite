@@ -1,0 +1,11 @@
+{
+    "login_header": "Bienvenue",
+    "login_email": "Adresse Courriel",
+    "login_password": "Mot de passe",
+    "login_submit": "Se connecter",
+    "login_register": "Vous n'avez pas de compte?",
+    "login_clickHere": "Cliquez ici",
+    "login": "Se connecter",
+    "login_successful": "Connexion réussis ",
+    "login_failed": "Il y a eu une erreur lors de la connexion, veuillez réessayer plus tard"
+}

@@ -1,0 +1,4 @@
+{
+    "hello_world": "Hello World!",
+    "welcome_message": "Bienvenue sur mon site personnel ! J'ai construit l'ensemble de ce site moi-même en utilisant React, .NET et SQL Server. Je l'héberge également sur mon serveur maison dans un environnement Docker sur Ubuntu Server. Consultez la section blogue pour plus de détails!"
+}

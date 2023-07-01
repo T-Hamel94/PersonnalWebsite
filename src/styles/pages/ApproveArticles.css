@@ -1,0 +1,17 @@
+.approve-article{
+    background-color: #3ff7ba;
+    color:black;
+    border-radius: 3px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 19px;
+
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.approve-article:hover{
+    background-color: #08ce8c;
+    color:white;
+}

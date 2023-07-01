@@ -1,0 +1,15 @@
+{
+    "profile_header":"My Profile",
+    "profile_post":"Post a new article",
+    "profile_manageArticles": "Manage my articles",
+    "profile_tableHeader": "User Info",
+    "profile_username": "Username:",
+    "profile_email": "Email:",
+    "profile_firstname": "First Name: ",
+    "profile_lastname": "Last Name: ",
+    "profile_birthdate": "Birthdate: ",
+    "profile_delete": "Delete my account",
+    "profile_deleteconfirmation": "Are you sure you want to delete you account?",
+    "delete_failed": "There has been an error while deleting the account, please try again later",
+    "delete_success": "Account suppressed with success!"
+}

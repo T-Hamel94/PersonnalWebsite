@@ -1,0 +1,87 @@
+.row {
+    position: relative;
+}
+
+#articlePreviewDate{
+    color:rgb(83, 83, 83);
+    margin-top:2px;
+    font-size:smaller;
+}
+
+.article-preview{
+    color:black;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 19px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 3px;
+    position:relative;
+}
+
+.article-preview:hover{
+    background-color: rgb(101, 143, 242);
+    cursor: pointer;
+}
+
+.articlePreviewLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.delete-article{
+    background-color: rgb(255, 85, 85);
+    color:black;
+    border-radius: 3px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 19px;
+
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-article:hover{
+    background-color: rgb(248, 54, 54);
+    color:white;
+}
+
+.approval-needed {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    padding: 10px;
+
+    color: rgb(255, 203, 34);
+    font-size: 1.1em;
+    text-align: center;
+    text-shadow: 0 0 10px #838181;
+
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 4px;
+
+    animation: pulse 2s ease-in infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@media screen and (max-width: 992px){
+    .article-preview{
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    .delete-article{
+        padding:5px;
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    #deleteMessage{
+        margin:0px
+    }
+}

@@ -1,13 +1,71 @@
-.App{
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+}
+
+.page-header{
+  font-family: monospace;
+  text-align: center;
+  font-size: 7em;
+  font-weight: 500;
+  color:rgb(0, 0, 0);
   
-  .wrapper > * {
-    flex: 1;
+  background-size: cover;
+  background-position: center;
+
+  padding: 30px 0px 30px 0px;
+}
+
+@media screen and (max-width: 499px){
+  .page-header{
+      font-size: 5em;
   }
+}
+
+/* Animation for page switching */
+.page-enter {
+  opacity: 0;
+  transform: translateX(100%);
+  background-color: white;
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  background-color: white;
+  transition: opacity 500ms ease-in-out, transform 350ms ease-in-out, background-color 500ms ease-in-out;
+}
+.page-exit {
+  opacity: 1;
+  transform: translateX(0%);
+  background-color: white;
+}
+.page-exit-active {
+  opacity: 1;
+  transform: translateX(-100%);
+  background-color: white;
+  transition: opacity 500ms ease-in-out, transform 400ms ease-in-out, background-color 500ms ease-in-out;
+}
+
+.justify-text{
+  text-align: justify;
+}
+
+.no-style-btn{
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}

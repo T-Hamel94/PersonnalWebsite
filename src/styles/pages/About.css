@@ -1,0 +1,14 @@
+#mainHeader{
+    background-image: url('../../../public/background/art-background.jpg');
+}
+
+#About{
+    text-align: center;
+    margin:0px;
+    padding:0px;
+}
+
+#headshot{
+    width: 325px;
+    border-radius: 5px;
+}
