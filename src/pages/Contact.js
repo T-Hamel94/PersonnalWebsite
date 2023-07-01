@@ -46,7 +46,7 @@ const Contact = () => {
             <div className="row contactContent d-flex justify-content-between">
               <div class="col-6 ">
                 <h4>
-                  <a href="https://www.chess.com/member/t_hamel" target='_new'>Challenge me !</a> 
+                  <a href="https://www.chess.com/member/t_hamel" target='_new'>{t("contact_chess")}</a> 
                 </h4>
               </div>
               <div className="col-6 d-flex justify-content-end">
