@@ -45,14 +45,15 @@
 
 @media screen and (max-width: 989px){
   #languageContainer{
-    margin-top:12px;
+    margin-top:6px;
+    margin-bottom:-13px;
     justify-content: center;
   }
 
   #logoContainer{
     text-align: center;
     margin-bottom: 5px;
-    margin-top:-15px;
+    margin-top:-13px;
   }
 
   #nav{
